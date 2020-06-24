@@ -16,7 +16,9 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: MyHome(title: 'Flutter Demo Home Page'),
+      home: MyHome(
+        title: 'Flutter Demo Home Page',
+      ),
       routes: {
         '/text': (ctx) => BaseWidgetTextPage(),
       },
