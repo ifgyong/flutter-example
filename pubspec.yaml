@@ -48,8 +48,7 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
-    - d.png
-    - f.png
+    - img/1.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
@@ -65,8 +64,8 @@ flutter:
   fonts:
     - family: Merriweather
       fonts:
-        - asset: flutter-example-git/fonts/Merriweather-Black.ttf
-        - asset: flutter-example-git/fonts/Merriweather-Light.ttf
+        - asset: fonts/Merriweather-Black.ttf
+        - asset: fonts/Merriweather-Light.ttf
           weight: 700
 #    uses-material-design: true
 #    - family: MoultiPass2

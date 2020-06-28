@@ -1,7 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:fluttertest01/baseWidget/baseButtons.dart';
 import 'package:fluttertest01/baseWidget/baseText.dart';
+import 'package:fluttertest01/baseWidget/imgAndIcon.dart';
 import 'package:fluttertest01/comment/config.dart';
+import 'package:fluttertest01/layout/baseFlex.dart';
 
 void main() {
   runApp(new MyApp());
@@ -15,12 +18,16 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
+//          fontFamily: 'Merriweather'
       ),
       home: MyHome(
         title: 'Flutter Demo Home Page',
       ),
       routes: {
         '/text': (ctx) => BaseWidgetTextPage(),
+        '/btn': (ctx) => BaseButtons(),
+        '/img': (ctx) => BaseImgAndIcon(),
+        '/flex': (ctx) => BaseFlex(),
       },
     );
   }
@@ -38,21 +45,13 @@ class MyHome extends StatefulWidget {
 class MyHomeState extends State<MyHome> {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'home',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-        visualDensity: VisualDensity.adaptivePlatformDensity,
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('home'),
       ),
-      home: Scaffold(
-        appBar: AppBar(
-          title: Text('home'),
-        ),
-        body: SafeArea(
-          child: _body(),
-        ),
+      body: SafeArea(
+        child: _body(),
       ),
-      routes: {'/text': (ctx) => BaseWidgetTextPage()},
     );
   }
 
@@ -62,11 +61,13 @@ class MyHomeState extends State<MyHome> {
         slivers: <Widget>[
           _title('基础组件', subTile: '文本、样式、按钮、图片、Icon、单选和复选框、输入框、进度指示器', list: [
             _child('文本 text 、style', '/text'),
-            _child('文本 text 、style', '/text')
+            _child('按钮', '/btn'),
+            _child('图片和Icon', '/img')
           ]),
           _title('布局',
               subTile:
-                  '线性：Row、Column、弹性：Flex、流水布局：Wrap、Flow、层叠：Stack、Positioned'),
+                  '线性：Row、Column、弹性：Flex、流水布局：Wrap、Flow、层叠：Stack、Positioned',
+              list: [_child('弹性布局 FractionallySizedBox', '/flex')]),
           _title('容器',
               subTile: 'padding、margin、尺寸、装饰、变换、脚手架、tabBar。底部导航、APPBar'),
           _title('滚动',
@@ -127,6 +128,10 @@ class MyHomeState extends State<MyHome> {
                 title,
                 style: ThemeYo.itemTextStyle,
               ),
+//              icon: Icon(
+//                Icons.info_outline,
+//                color: Theme.of(context).focusColor,
+//              ),
               onPressed: () {
                 Navigator.pushNamed(this.context, route);
               },
