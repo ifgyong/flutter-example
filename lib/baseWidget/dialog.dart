@@ -143,11 +143,16 @@ class BaseDialogState extends State<BaseDialog> {
 
   void _showDatePicker() {
     showDatePicker(
-      context: this.context,
-      initialDate: DateTime.now(),
-      firstDate: DateTime.now(),
-      lastDate: DateTime.now().add(Duration(days: 10)),
-    );
+        context: this.context,
+        initialDate: DateTime.now(), //初始时间
+        firstDate: DateTime.now(), //开始时间
+        lastDate: DateTime.now().add(Duration(days: 10)), //最后时间是当前时间加上10天
+        initialDatePickerMode: DatePickerMode.year, //最开始展示年份
+        initialEntryMode: DatePickerEntryMode.input, //开始是输入时间还是日历
+        selectableDayPredicate: (time) {
+          print(time.toString());
+          return true;
+        });
   }
 
   void _showTimePicker() {

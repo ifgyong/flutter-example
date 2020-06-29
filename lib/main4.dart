@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertest01/baseWidget/baseButtons.dart';
 import 'package:fluttertest01/baseWidget/baseIndicator.dart';
+import 'package:fluttertest01/baseWidget/baseState.dart';
 import 'package:fluttertest01/baseWidget/baseSwitch.dart';
 import 'package:fluttertest01/baseWidget/baseText.dart';
 import 'package:fluttertest01/baseWidget/baseTextField.dart';
@@ -35,7 +36,8 @@ class MyApp extends StatelessWidget {
         '/sheet': (ctx) => BaseDialog(),
         '/sw': (ctx) => BaseSwitch(),
         '/field': (ctx) => BaseField(),
-        '/in': (ctx) => BaseIndicator()
+        '/in': (ctx) => BaseIndicator(),
+        '/st': (ctx) => TapBox(),
       },
     );
   }
@@ -71,10 +73,11 @@ class MyHomeState extends State<MyHome> {
             _child('文本 text 、style', '/text'),
             _child('按钮', '/btn'),
             _child('图片和Icon', '/img'),
-            _child('弹窗', '/sheet'),
             _child('单选和复选', '/sw'),
             _child('输入框表单', '/field'),
             _child('进度指示器', '/in'),
+            _child('弹窗', '/sheet'),
+            _child('状态管理', '/st')
           ]),
           _title('布局',
               subTile:
