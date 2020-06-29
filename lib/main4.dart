@@ -1,7 +1,11 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertest01/baseWidget/baseButtons.dart';
+import 'package:fluttertest01/baseWidget/baseIndicator.dart';
+import 'package:fluttertest01/baseWidget/baseSwitch.dart';
 import 'package:fluttertest01/baseWidget/baseText.dart';
+import 'package:fluttertest01/baseWidget/baseTextField.dart';
+import 'package:fluttertest01/baseWidget/dialog.dart';
 import 'package:fluttertest01/baseWidget/imgAndIcon.dart';
 import 'package:fluttertest01/comment/config.dart';
 import 'package:fluttertest01/layout/baseFlex.dart';
@@ -28,6 +32,10 @@ class MyApp extends StatelessWidget {
         '/btn': (ctx) => BaseButtons(),
         '/img': (ctx) => BaseImgAndIcon(),
         '/flex': (ctx) => BaseFlex(),
+        '/sheet': (ctx) => BaseDialog(),
+        '/sw': (ctx) => BaseSwitch(),
+        '/field': (ctx) => BaseField(),
+        '/in': (ctx) => BaseIndicator()
       },
     );
   }
@@ -56,13 +64,17 @@ class MyHomeState extends State<MyHome> {
   }
 
   Widget _body() {
-    return CupertinoScrollbar(
+    Widget w = CupertinoScrollbar(
       child: CustomScrollView(
         slivers: <Widget>[
           _title('基础组件', subTile: '文本、样式、按钮、图片、Icon、单选和复选框、输入框、进度指示器', list: [
             _child('文本 text 、style', '/text'),
             _child('按钮', '/btn'),
-            _child('图片和Icon', '/img')
+            _child('图片和Icon', '/img'),
+            _child('弹窗', '/sheet'),
+            _child('单选和复选', '/sw'),
+            _child('输入框表单', '/field'),
+            _child('进度指示器', '/in'),
           ]),
           _title('布局',
               subTile:
@@ -83,9 +95,7 @@ class MyHomeState extends State<MyHome> {
         ],
       ),
     );
-    return Container(
-      child: Text('home'),
-    );
+    return w;
   }
 
   Widget _title(String text, {List<Widget> list, String subTile = ''}) {

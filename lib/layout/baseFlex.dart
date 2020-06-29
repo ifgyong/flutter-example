@@ -34,3 +34,18 @@ class BaseFlexState extends State<BaseFlex> {
     );
   }
 }
+
+/*"page-copyright"
+* "page-copyright": {
+                  "description": "modified at 2020-06-28 10:11:00",
+                  "signature": "兜兜转转还是你",
+                  "wisdom": "Designer, Frontend Developer & overall web enthusiast",
+                  "format": "YYYY-MM-dd hh:mm:ss",
+                  "copyright": "Copyright &#169; fgyong",
+                  "timeColor": "#666",
+                  "copyrightColor": "#666",
+                  "utcOffset": "8",
+                  "style": "normal",
+                  "noPowered": false,
+                }
+* */
