@@ -11,6 +11,6 @@ class ThemeYo {
   }
 
   static TextStyle get itemTextStyle {
-    return TextStyle(color: Colors.black54, fontSize: 17);
+    return TextStyle(color: Colors.black45, fontSize: 15);
   }
 }
