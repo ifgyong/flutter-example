@@ -168,7 +168,7 @@ class BaseFlexState extends State<BaseFlex> {
             child: OutlineButton(
               child: Text('btn'),
             ),
-          )
+          ),
         ],
       ),
     );

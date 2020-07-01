@@ -1,14 +1,27 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
-class BaseScrollViewWheel extends StatelessWidget {
+class BaseScrollViewWheel extends StatefulWidget {
+  BaseScrollViewWheelState createState() => BaseScrollViewWheelState();
+}
+
+class BaseScrollViewWheelState extends State<BaseScrollViewWheel> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: Text('ListWheelScrollView'),
       ),
-      body: _body(),
+      body: Stack(
+        children: <Widget>[
+          Positioned.fill(child: _body()),
+          Positioned.fill(
+            child: _bottom(),
+            bottom: 0,
+          ),
+        ],
+      ),
     );
   }
 
@@ -26,12 +39,66 @@ class BaseScrollViewWheel extends StatelessWidget {
     return ListWheelScrollView(
         itemExtent: 100,
         children: list,
-        offAxisFraction: 0, //左右偏移量
+        offAxisFraction: value, //左右偏移量
         /// 固定中间选中的的放大或者缩小操作
-//        magnification: 1.2,
-//        useMagnifier: true,
+        magnification: value3 + 1,
+        useMagnifier: true,
+
         /// list 弯曲度  [0,0.01]
 
-        perspective: 0.001);
+        perspective: value2 / 100.0 == 0 ? 0.00000000001 : value2 / 100.0);
   }
+
+  Widget _bottom() {
+    return Column(
+      children: <Widget>[
+        Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            Text('offAxisFraction'),
+            CupertinoSlider(
+                value: value,
+                onChanged: (v) {
+                  setState(() {
+                    value = v;
+                  });
+                  print(v);
+                }),
+          ],
+        ),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            Text('perspective'),
+            CupertinoSlider(
+                value: value2,
+                onChanged: (v) {
+                  setState(() {
+                    value2 = v;
+                  });
+                  print(v);
+                }),
+          ],
+        ),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            Text('magnification'),
+            CupertinoSlider(
+                value: value3,
+                onChanged: (v) {
+                  setState(() {
+                    value3 = v;
+                  });
+                  print(v);
+                }),
+          ],
+        )
+      ],
+    );
+  }
+
+  double value = 0;
+  double value2 = 0;
+  double value3 = 0;
 }

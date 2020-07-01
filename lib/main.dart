@@ -9,8 +9,13 @@ import 'package:fluttertest01/baseWidget/baseTextField.dart';
 import 'package:fluttertest01/baseWidget/dialog.dart';
 import 'package:fluttertest01/baseWidget/imgAndIcon.dart';
 import 'package:fluttertest01/comment/config.dart';
+import 'package:fluttertest01/container/base_clip.dart';
+import 'package:fluttertest01/container/base_constraints.dart';
+import 'package:fluttertest01/container/base_padding.dart';
 import 'package:fluttertest01/layout/baseFlex.dart';
 import 'package:fluttertest01/layout/base_align.dart';
+import 'package:fluttertest01/layout/base_flow_and_wrap.dart';
+import 'package:fluttertest01/layout/base_row_and_column.dart';
 import 'package:fluttertest01/layout/base_stack.dart';
 import 'package:fluttertest01/scroll/scrollview.dart';
 
@@ -50,6 +55,11 @@ class MyApp extends StatelessWidget {
         '/wheel': (ctx) => BaseScrollViewWheel(),
         '/align': (ctx) => BaseAlign(),
         '/stack': (ctx) => BaseStack(),
+        '/row': (ctx) => BaseRowAndColumn(),
+        '/pad': (ctx) => BasePadding(),
+        '/flow': (ctx) => BaseFlowAndWrap(),
+        '/box': (c) => BaseConstraints(),
+        '/clip': (c) => BaseClip(),
       },
     );
   }
@@ -98,12 +108,19 @@ class MyHomeState extends State<MyHome> {
               subTile:
                   '线性：Row、Column、弹性：Flex、流水布局：Wrap、Flow、层叠：Stack、Positioned',
               list: [
-                _child('绝对位置stack', '/stack'),
+                _child('绝对位置stack、Positioned', '/stack'),
                 _child('相对位置', '/align'),
-                _child('弹性布局 FractionallySizedBox', '/flex')
+                _child('弹性布局 Row Column', '/row'),
+                _child('弹性布局 Flex', '/flex'),
+                _child('流式布局 wrap flow', '/flow'),
               ]),
           _title('容器',
-              subTile: 'padding、margin、尺寸、装饰、变换、脚手架、tabBar。底部导航、APPBar'),
+              subTile: 'padding、margin、尺寸、装饰、变换、脚手架、tabBar。底部导航、APPBar',
+              list: [
+                _child('padding', '/pad'),
+                _child('尺寸限制容器', '/box'),
+                _child('裁剪容器', '/clip')
+              ]),
           _title('滚动',
               subTile: '滚SingleScrollView、List、GridView、CustomScrollView',
               list: [
