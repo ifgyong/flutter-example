@@ -9,9 +9,15 @@ import 'package:fluttertest01/baseWidget/baseTextField.dart';
 import 'package:fluttertest01/baseWidget/dialog.dart';
 import 'package:fluttertest01/baseWidget/imgAndIcon.dart';
 import 'package:fluttertest01/comment/config.dart';
+import 'package:fluttertest01/container/base_bars.dart';
+import 'package:fluttertest01/container/base_container.dart';
+import 'package:fluttertest01/container/base_decorateBox.dart';
 import 'package:fluttertest01/container/base_clip.dart';
 import 'package:fluttertest01/container/base_constraints.dart';
 import 'package:fluttertest01/container/base_padding.dart';
+import 'package:fluttertest01/container/base_transform.dart';
+import 'package:fluttertest01/container/scrollview/baseListView.dart';
+import 'package:fluttertest01/container/scrollview/baseSingleChildScrollView.dart';
 import 'package:fluttertest01/layout/baseFlex.dart';
 import 'package:fluttertest01/layout/base_align.dart';
 import 'package:fluttertest01/layout/base_flow_and_wrap.dart';
@@ -60,6 +66,12 @@ class MyApp extends StatelessWidget {
         '/flow': (ctx) => BaseFlowAndWrap(),
         '/box': (c) => BaseConstraints(),
         '/clip': (c) => BaseClip(),
+        '/dbox': (c) => BaseDecoratedBox(),
+        '/transform': (_) => BaseTransform(),
+        '/contain': (_) => BaseContainer(),
+        '/bars': (_) => BaseBars(),
+        '/scrollview': (_) => BaseSingleChildScrollView(),
+        '/list': (_) => BaseListView()
       },
     );
   }
@@ -118,12 +130,18 @@ class MyHomeState extends State<MyHome> {
               subTile: 'padding、margin、尺寸、装饰、变换、脚手架、tabBar。底部导航、APPBar',
               list: [
                 _child('padding', '/pad'),
+                _child('container 容器', '/contain'),
                 _child('尺寸限制容器', '/box'),
-                _child('裁剪容器', '/clip')
+                _child('装饰类容器', '/dbox'),
+                _child('变换transform', '/transform'),
+                _child('裁剪容器', '/clip'),
+                _child('导航 脚手架 Tabbar', '/bars'),
               ]),
-          _title('滚动',
-              subTile: '滚SingleScrollView、List、GridView、CustomScrollView',
+          _title('滑动组件',
+              subTile: 'SingleScrollView、List、GridView、CustomScrollView',
               list: [
+                _child('SingleScrollView', '/scrollview'),
+                _child('listView', '/list'),
                 _child('车轮list', '/wheel'),
               ]),
           _title('功能能组件', subTile: '导航返回拦截、数据共享、跨组件状态共享、颜色和主题、对话框、异步更新UI'),
