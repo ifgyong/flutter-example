@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:fluttertest01/container/scrollview/baseListView.dart';
+import 'package:fluttertest01/scrollview/baseListView.dart';
 
 ///
 /// Created by fgyong on 2020/7/3.
