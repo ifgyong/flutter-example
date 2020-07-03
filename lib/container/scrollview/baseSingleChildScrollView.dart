@@ -26,7 +26,7 @@ class _BaseSingleChildScrollViewState extends State<BaseSingleChildScrollView> {
     for (int i = 0; i < 30; i++) {
       list.add(Card(
         child: Container(
-          height: 40,
+          height: 140,
           width: MediaQuery.of(context).size.width,
           alignment: Alignment.center,
           child: Text('$i'),
