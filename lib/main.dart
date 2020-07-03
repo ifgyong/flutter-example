@@ -16,6 +16,7 @@ import 'package:fluttertest01/container/base_clip.dart';
 import 'package:fluttertest01/container/base_constraints.dart';
 import 'package:fluttertest01/container/base_padding.dart';
 import 'package:fluttertest01/container/base_transform.dart';
+import 'package:fluttertest01/container/scrollview/baseGridView.dart';
 import 'package:fluttertest01/container/scrollview/baseListView.dart';
 import 'package:fluttertest01/container/scrollview/baseSingleChildScrollView.dart';
 import 'package:fluttertest01/layout/baseFlex.dart';
@@ -71,7 +72,8 @@ class MyApp extends StatelessWidget {
         '/contain': (_) => BaseContainer(),
         '/bars': (_) => BaseBars(),
         '/scrollview': (_) => BaseSingleChildScrollView(),
-        '/list': (_) => BaseListView()
+        '/list': (_) => BaseListView(),
+        '/grid': (_) => BaseGridView()
       },
     );
   }
@@ -142,6 +144,7 @@ class MyHomeState extends State<MyHome> {
               list: [
                 _child('SingleScrollView', '/scrollview'),
                 _child('listView', '/list'),
+                _child('gridView', '/grid'),
                 _child('车轮list', '/wheel'),
               ]),
           _title('功能能组件', subTile: '导航返回拦截、数据共享、跨组件状态共享、颜色和主题、对话框、异步更新UI'),
