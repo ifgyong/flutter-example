@@ -17,6 +17,9 @@ import 'package:fluttertest01/container/base_clip.dart';
 import 'package:fluttertest01/container/base_constraints.dart';
 import 'package:fluttertest01/container/base_padding.dart';
 import 'package:fluttertest01/container/base_transform.dart';
+import 'package:fluttertest01/features/base_color_and_theme.dart';
+import 'package:fluttertest01/features/base_future_stream.dart';
+import 'package:fluttertest01/features/base_touch_handle.dart';
 import 'package:fluttertest01/features/share_data.dart';
 import 'package:fluttertest01/layout/baseFlex.dart';
 import 'package:fluttertest01/layout/base_align.dart';
@@ -82,6 +85,9 @@ class MyApp extends StatelessWidget {
         '/listenoffset': (_) => BaseListenScrollView(),
         '/willpop': (_) => BaseWillPop(),
         '/sharedata': (_) => BaseShareData(),
+        '/colortheme': (_) => BaseColorAndTheme(),
+        '/futurestream': (_) => BaseFutureStream(),
+        '/touchhandle': (_) => BaseTouchHandle(),
       },
     );
   }
@@ -162,8 +168,12 @@ class MyHomeState extends State<MyHome> {
               list: [
                 _child('导航返回键拦截', '/willpop'),
                 _child('共享数据', '/sharedata'),
+                _child('颜色和主题', '/colortheme'),
+                _child('异步更新', '/futurestream'),
               ]),
-          _title('时间处理和通知', subTile: '原始指针和时间、手势、全局总线、通知'),
+          _title('时间处理和通知',
+              subTile: '原始指针和时间、手势、全局总线、通知',
+              list: [_child('原始指针处理', '/touchhandle')]),
           _title('动画', subTile: '路由动画、Hero动画、交织动画、过度组件(AnimatedSwitcher)'),
           _title(
             '自定义组件',
