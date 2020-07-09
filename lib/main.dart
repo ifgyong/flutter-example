@@ -18,7 +18,10 @@ import 'package:fluttertest01/container/base_constraints.dart';
 import 'package:fluttertest01/container/base_padding.dart';
 import 'package:fluttertest01/container/base_transform.dart';
 import 'package:fluttertest01/features/base_color_and_theme.dart';
+import 'package:fluttertest01/features/base_eventbus.dart';
 import 'package:fluttertest01/features/base_future_stream.dart';
+import 'package:fluttertest01/features/base_gesturedetetor.dart';
+import 'package:fluttertest01/features/base_notification.dart';
 import 'package:fluttertest01/features/base_touch_handle.dart';
 import 'package:fluttertest01/features/share_data.dart';
 import 'package:fluttertest01/layout/baseFlex.dart';
@@ -88,6 +91,9 @@ class MyApp extends StatelessWidget {
         '/colortheme': (_) => BaseColorAndTheme(),
         '/futurestream': (_) => BaseFutureStream(),
         '/touchhandle': (_) => BaseTouchHandle(),
+        '/gesture': (_) => BaseGesuredetetor(),
+        '/ebus': (_) => BaseEventBus(),
+        '/notifi': (_) => BaseNotificationPage(),
       },
     );
   }
@@ -169,9 +175,12 @@ class MyHomeState extends State<MyHome> {
             _child('颜色和主题', '/colortheme'),
             _child('异步更新', '/futurestream'),
           ]),
-          _title('时间处理和通知',
-              subTile: '原始指针和时间、手势、全局总线、通知',
-              list: [_child('原始指针处理', '/touchhandle')]),
+          _title('时间处理和通知', subTile: '原始指针和时间、手势、全局总线、通知', list: [
+            _child('原始指针处理', '/touchhandle'),
+            _child('手势识别', '/gesture'),
+            _child('全局事件总线', '/ebus'),
+            _child('通知', '/notifi'),
+          ]),
           _title('动画', subTile: '路由动画、Hero动画、交织动画、过度组件(AnimatedSwitcher)'),
           _title(
             '自定义组件',
