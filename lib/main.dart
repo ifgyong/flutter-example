@@ -1,6 +1,12 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertest01/Features/base_will_pop.dart';
+import 'package:fluttertest01/animation/base_animaiton.dart';
+import 'package:fluttertest01/animation/base_animation_diy.dart';
+import 'package:fluttertest01/animation/base_animation_switch.dart';
+import 'package:fluttertest01/animation/base_hreo.dart';
+import 'package:fluttertest01/animation/base_pageRoute.dart';
+import 'package:fluttertest01/animation/base_tagger_animation.dart';
 import 'package:fluttertest01/baseWidget/baseButtons.dart';
 import 'package:fluttertest01/baseWidget/baseIndicator.dart';
 import 'package:fluttertest01/baseWidget/baseState.dart';
@@ -35,6 +41,7 @@ import 'package:fluttertest01/scrollview/baseGridView.dart';
 import 'package:fluttertest01/scrollview/baseListView.dart';
 import 'package:fluttertest01/scrollview/baseListenScrollViewOffset.dart';
 import 'package:fluttertest01/scrollview/baseSingleChildScrollView.dart';
+import 'package:fluttertest01/tips/keepStateAlive.dart';
 
 void main() {
   runApp(new MyApp());
@@ -94,6 +101,13 @@ class MyApp extends StatelessWidget {
         '/gesture': (_) => BaseGesuredetetor(),
         '/ebus': (_) => BaseEventBus(),
         '/notifi': (_) => BaseNotificationPage(),
+        '/animation': (_) => BaseAnimation(),
+        '/route': (_) => BasePageRoute(),
+        '/hero': (_) => BaseHreo(),
+        '/jz': (_) => BaseTaggerAnimation(),
+        '/animationswitch': (_) => BaseAnimationSwitcher(),
+        '/diyanimation': (_) => BaseDIYPage(),
+        '/BaseKeepStateAlive': (_) => BaseKeepStateAlive()
       },
     );
   }
@@ -181,12 +195,24 @@ class MyHomeState extends State<MyHome> {
             _child('全局事件总线', '/ebus'),
             _child('通知', '/notifi'),
           ]),
-          _title('动画', subTile: '路由动画、Hero动画、交织动画、过度组件(AnimatedSwitcher)'),
+          _title('动画',
+              subTile: '路由动画、Hero动画、交织动画、过度组件(AnimatedSwitcher)',
+              list: [
+                _child('动画结构', '/animation'),
+                _child('过度动画', '/route'),
+                _child('hero动画', '/hero'),
+                _child('交织动画', '/jz'),
+                _child('切换动画', '/animationswitch'),
+                _child('过渡性动画', '/diyanimation'),
+              ]),
           _title(
             '自定义组件',
           ),
           _title('文件操作与网络请求',
               subTile: 'Http HttpClient Dio Http分块下载、WebSocket、Json转Model'),
+          _title('其他每周小部件与Tips',
+              subTile: '状态保持、',
+              list: [_child('保持页面数据不丢失', '/BaseKeepStateAlive')]),
         ],
       ),
     );
