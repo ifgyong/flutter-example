@@ -30,6 +30,11 @@ import 'package:fluttertest01/features/base_gesturedetetor.dart';
 import 'package:fluttertest01/features/base_notification.dart';
 import 'package:fluttertest01/features/base_touch_handle.dart';
 import 'package:fluttertest01/features/share_data.dart';
+import 'package:fluttertest01/file_and_http/fileAction.dart';
+import 'package:fluttertest01/file_and_http/http_client.dart';
+import 'package:fluttertest01/file_and_http/http_dio.dart';
+import 'package:fluttertest01/file_and_http/http_socket.dart';
+import 'package:fluttertest01/file_and_http/json_to_model.dart';
 import 'package:fluttertest01/layout/baseFlex.dart';
 import 'package:fluttertest01/layout/base_align.dart';
 import 'package:fluttertest01/layout/base_flow_and_wrap.dart';
@@ -41,6 +46,7 @@ import 'package:fluttertest01/scrollview/baseGridView.dart';
 import 'package:fluttertest01/scrollview/baseListView.dart';
 import 'package:fluttertest01/scrollview/baseListenScrollViewOffset.dart';
 import 'package:fluttertest01/scrollview/baseSingleChildScrollView.dart';
+import 'package:fluttertest01/tips/asyn_and_isolate.dart';
 import 'package:fluttertest01/tips/keepStateAlive.dart';
 
 void main() {
@@ -107,7 +113,13 @@ class MyApp extends StatelessWidget {
         '/jz': (_) => BaseTaggerAnimation(),
         '/animationswitch': (_) => BaseAnimationSwitcher(),
         '/diyanimation': (_) => BaseDIYPage(),
-        '/BaseKeepStateAlive': (_) => BaseKeepStateAlive()
+        '/BaseKeepStateAlive': (_) => BaseKeepStateAlive(),
+        '/BaseFileRoute': (_) => BaseFileRoute(),
+        '/BaseHttpClientRoute': (_) => BaseHttpClientRoute(),
+        '/BaseHttpDioRoute': (_) => BaseHttpDioRoute(),
+        '/BaseSocketRoute': (_) => BaseSocketRoute(),
+        '/BaseJsonToModelRoute': (_) => BaseJsonToModelRoute(),
+        '/BaseAsynAndISOlateRoute': (_) => BaseAsynAndISOlateRoute(),
       },
     );
   }
@@ -209,10 +221,18 @@ class MyHomeState extends State<MyHome> {
             '自定义组件',
           ),
           _title('文件操作与网络请求',
-              subTile: 'Http HttpClient Dio Http分块下载、WebSocket、Json转Model'),
-          _title('其他每周小部件与Tips',
-              subTile: '状态保持、',
-              list: [_child('保持页面数据不丢失', '/BaseKeepStateAlive')]),
+              subTile: 'Http HttpClient Dio Http分块下载、WebSocket、Json转Model',
+              list: [
+                _child('文件读写', '/BaseFileRoute'),
+                _child('HTTP client', '/BaseHttpClientRoute'),
+                _child('dio请求', '/BaseHttpDioRoute'),
+                _child('使用Socket', '/BaseSocketRoute'),
+                _child('json 转model', '/BaseJsonToModelRoute'),
+              ]),
+          _title('其他每周小部件与Tips', subTile: '状态保持、', list: [
+            _child('保持页面数据不丢失', '/BaseKeepStateAlive'),
+            _child('异步与多线程', '/BaseAsynAndISOlateRoute')
+          ]),
         ],
       ),
     );

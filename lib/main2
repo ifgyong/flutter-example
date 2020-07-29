@@ -1,0 +1,206 @@
+import 'dart:async';
+import 'dart:isolate';
+
+import 'dart:core';
+
+// Isolate isolate;
+String name = 'fgyong';
+void main() {
+  test7();
+}
+
+void test7() async {
+  createTask();
+}
+
+void test6() {
+  createTask(); //创建线程
+  for (var i = 0; i < 9999999999; i++) {}
+  scheduleMicrotask(() {
+    //第一个微任务
+    print('H1');
+    scheduleMicrotask(() {
+      //第一个紧急任务
+      print('H1-1');
+    });
+    Timer.run(() {
+      //第一个非紧急任务
+      print('L1-2');
+    });
+  });
+  scheduleMicrotask(() {
+    // 第二个高优先级任务
+    print('H2');
+    scheduleMicrotask(() {
+      //第二个紧急任务
+      print('H2-1');
+    });
+    Timer.run(() {
+      //第二个非紧急任务
+      print('L2-2');
+    });
+  });
+  Timer.run(() {
+    // 第一个低优先级任务
+    print('L3');
+    scheduleMicrotask(() {
+      //第三个紧急任务
+      print('H3-1');
+    });
+    Timer.run(() {
+      //第三个非紧急任务
+      print('L3-2');
+    });
+  });
+
+  Timer.run(() {
+    // 第二个低优先级任务
+    print('L4');
+    scheduleMicrotask(() {
+      //第四个紧急任务
+      print('H4-1');
+    });
+    Timer.run(() {
+      //第四个非紧急任务
+      print('L4-2');
+    });
+  });
+}
+
+/// 新线程执行新的任务 并监听
+Isolate isolate;
+Isolate isolate2;
+
+void createTask() async {
+  ReceivePort receivePort = ReceivePort();
+  isolate = await Isolate.spawn(sendP1, receivePort.sendPort);
+  receivePort.listen((data) {
+    print(data);
+    if (data is List) {
+      SendPort subSencPort = (data as List)[1];
+      String msg = (data as List)[0];
+      print('$msg 在主线程收到');
+      if (msg == 'close') {
+        receivePort.close();
+      } else if (msg == 'task') {
+        taskMain();
+      }
+      subSencPort.send(['主线程发出']);
+    }
+  });
+}
+
+void sendP1(SendPort sendPort) async {
+  ReceivePort receivePort = new ReceivePort();
+  receivePort.listen((data) async {
+    print(data);
+    if (data is List) {
+      String msg = (data as List)[0];
+      print('$msg 在子线程收到');
+      if (msg == 'close') {
+        receivePort.close();
+      } else if (msg == 'task') {
+        var m = await task();
+        sendPort.send(['$m', receivePort.sendPort]);
+      }
+    }
+  });
+  sendPort.send(['子线程线程发出', receivePort.sendPort]);
+}
+
+Future<String> task() async {
+  print('子线程执行task');
+  for (var i = 0; i < 99999999; i++) {}
+  return 'task 完成';
+}
+
+void taskMain() {
+  print('主线程执行task');
+}
+
+void sendPort2(SendPort sendPort) async {
+  ReceivePort receivePort = ReceivePort();
+  isolate = await Isolate.spawn(sendPort2, receivePort.sendPort);
+  receivePort.listen((data) {
+    print(data);
+  });
+}
+
+/// 新线程执行任务
+void sendPort(SendPort sendPort) {
+  scheduleMicrotask(() {
+    print('IH5-1');
+  });
+  Timer.run(() {
+    print('IL5-2');
+  });
+  sendPort.send('第三方执行任务结束');
+}
+
+void test5() async {
+  final rece = ReceivePort();
+  isolate = await Isolate.spawn(sendPort, rece.sendPort);
+  rece.listen((data) {
+    print('收到了 ${data} ,name:$name');
+  });
+}
+
+void test4() async {
+  print('start ${DateTime.now()}');
+  for (int i = 0; i < 99999; i++) {
+    scheduleMicrotask(() {
+      print('Microtask 1');
+    });
+  }
+  Timer.run(() {
+    print('Timer 1 ${DateTime.now()}');
+  });
+  print('end ${DateTime.now()}');
+}
+
+void test3() async {
+  print('start');
+  scheduleMicrotask(() {
+    print('Microtask 1');
+    scheduleMicrotask(() {
+      print('Microtask 2');
+    });
+  });
+  Timer.run(() {
+    print('Timer 1');
+  });
+  print('end');
+}
+
+/// 微任务
+/// 定时器
+void test2() async {
+  print('start');
+  scheduleMicrotask(() {
+    print('Microtask 1');
+  });
+  Timer.run(() {
+    print('Timer 1');
+  });
+  Future.delayed(Duration(seconds: 0)).then((value) {
+    print('Future 1');
+  });
+  print('end');
+}
+
+/// 微任务
+/// 定时器
+void test() async {
+  print('start');
+  scheduleMicrotask(() {
+    print('Microtask 1');
+  });
+  Future.delayed(Duration(seconds: 0)).then((value) {
+    print('Future 1');
+  });
+  Timer.run(() {
+    print('Timer 1');
+  });
+
+  print('end');
+}
