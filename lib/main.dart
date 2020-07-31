@@ -47,6 +47,9 @@ import 'package:fluttertest01/scrollview/baseListView.dart';
 import 'package:fluttertest01/scrollview/baseListenScrollViewOffset.dart';
 import 'package:fluttertest01/scrollview/baseSingleChildScrollView.dart';
 import 'package:fluttertest01/tips/asyn_and_isolate.dart';
+import 'package:fluttertest01/tips/async_and_async*.dart';
+import 'package:fluttertest01/tips/base_provider.dart';
+import 'package:fluttertest01/tips/base_record.dart';
 import 'package:fluttertest01/tips/keepStateAlive.dart';
 
 void main() {
@@ -120,6 +123,9 @@ class MyApp extends StatelessWidget {
         '/BaseSocketRoute': (_) => BaseSocketRoute(),
         '/BaseJsonToModelRoute': (_) => BaseJsonToModelRoute(),
         '/BaseAsynAndISOlateRoute': (_) => BaseAsynAndISOlateRoute(),
+        '/BaseProviderRoute': (_) => BaseProviderRoute(),
+        '/BaseRecordRoute': (_) => BaseRecordRoute(),
+        '/BaseAsync': (_) => BaseAsync()
       },
     );
   }
@@ -231,7 +237,10 @@ class MyHomeState extends State<MyHome> {
               ]),
           _title('其他每周小部件与Tips', subTile: '状态保持、', list: [
             _child('保持页面数据不丢失', '/BaseKeepStateAlive'),
-            _child('异步与多线程', '/BaseAsynAndISOlateRoute')
+            _child('异步与多线程', '/BaseAsynAndISOlateRoute'),
+            _child('异步与同步数据流', '/BaseAsync'),
+            _child('状态管理 provider', '/BaseProviderRoute'),
+            _child('录音与播放', '/BaseRecordRoute'),
           ]),
         ],
       ),

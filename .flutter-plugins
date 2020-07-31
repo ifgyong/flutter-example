@@ -1,7 +1,10 @@
 # This is a generated file; do not edit or check into version control.
+audioplayer=/Users/Jerry/flutterSDK/flutter1.17-stable/.pub-cache/hosted/pub.flutter-io.cn/audioplayer-0.8.1/
 path_provider=/Users/Jerry/flutterSDK/flutter1.17-stable/.pub-cache/hosted/pub.flutter-io.cn/path_provider-1.6.11/
 path_provider_linux=/Users/Jerry/flutterSDK/flutter1.17-stable/.pub-cache/hosted/pub.flutter-io.cn/path_provider_linux-0.0.1+2/
 path_provider_macos=/Users/Jerry/flutterSDK/flutter1.17-stable/.pub-cache/hosted/pub.flutter-io.cn/path_provider_macos-0.0.4+3/
+permission_handler=/Users/Jerry/flutterSDK/flutter1.17-stable/.pub-cache/hosted/pub.flutter-io.cn/permission_handler-5.0.1+1/
+record_mp3=/Users/Jerry/flutterSDK/flutter1.17-stable/.pub-cache/hosted/pub.flutter-io.cn/record_mp3-2.0.0/
 url_launcher=/Users/Jerry/flutterSDK/flutter1.17-stable/.pub-cache/hosted/pub.flutter-io.cn/url_launcher-5.4.11/
 url_launcher_macos=/Users/Jerry/flutterSDK/flutter1.17-stable/.pub-cache/hosted/pub.flutter-io.cn/url_launcher_macos-0.0.1+7/
 url_launcher_web=/Users/Jerry/flutterSDK/flutter1.17-stable/.pub-cache/hosted/pub.flutter-io.cn/url_launcher_web-0.1.1+6/

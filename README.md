@@ -1,5 +1,7 @@
 # flutter-example
-根据 flutter-book的例子
+根据 flutter-book的例子,所有连接均为代码示例。
+
+![gif](img/demo.gif)
 
 
 ##  Flutter 各种小部件使用例子
@@ -60,6 +62,10 @@
    * 
 * [10. flutter widget of week](#)
   * [10.1 异步与isolate](lib/tips/asyn_and_isolate.dart)
+  * [10.2 录音与播放](/lib/tips/base_record.dart)
+  * [10.3 保持页面状态](lib/tips/keepStateAlive.dart)
+  * [10.4 异步与同步数据流](lib/tips/async_and_async*.dart)
+  
   
 
 

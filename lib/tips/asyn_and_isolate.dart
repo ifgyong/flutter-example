@@ -17,23 +17,41 @@ class BaseAsynAndISOlateRoute extends StatefulWidget {
 }
 
 class _BaseAsynAndISOlateRouteState extends State<BaseAsynAndISOlateRoute> {
+  int _fps = 0;
+  String _stringFPS = '';
+  @override
+  void initState() {
+    WidgetsBinding.instance.addTimingsCallback((timings) {
+      _fps += 1;
+    });
+    Timer(Duration(seconds: 1), () {
+      _stringFPS = _fps.toString();
+      setState(() {});
+      _fps = 0;
+    });
+
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(''),
+        title: Text('线程'),
       ),
       body: _body(),
     );
   }
 
   int _count = 0;
+  String _string = '';
   Widget _body() {
     return Center(
       child: CupertinoScrollbar(
         child: SingleChildScrollView(
           child: Column(
             children: <Widget>[
+              Text('FPS:$_stringFPS'),
               OutlineButton(
                 child: Text('开辟线程'),
                 onPressed: _createIso,
@@ -55,6 +73,23 @@ class _BaseAsynAndISOlateRouteState extends State<BaseAsynAndISOlateRoute> {
                 },
               ),
               Text(_count.toString()),
+              OutlineButton(
+                child: Text('测试是否添加耗时任务是否堵塞'),
+                onPressed: () {
+                  Timer.run(() {
+                    setState(() {
+                      _string = '耗时任务开始';
+                    });
+                    for (var i = 0; i < 9999999999; ++i) {
+                      //
+                    }
+                    setState(() {
+                      _string = '耗时任务结束';
+                    });
+                  });
+                },
+              ),
+              Text(_string)
             ],
           ),
         ),
