@@ -39,6 +39,20 @@ class _BaseAsyncState extends State<BaseAsync> {
 
   int _count = 0;
 
+  Future<String> _toString() async {
+    var s = await _stream().map((event) => event.toString()).join('|');
+    return s;
+  }
+
+  Future<List> _toList() async {
+    var s = await _stream().toList();
+    return s;
+  }
+
+  Stream<int> _getDataFromServer() {
+    return null;
+  }
+
   /// 异步数据流
   Stream<int> _stream() async* {
     if (_count < 10) {
@@ -46,7 +60,7 @@ class _BaseAsyncState extends State<BaseAsync> {
 
       await Future.delayed(Duration(seconds: 1));
       sleep(Duration(seconds: 1));
-      yield* _stream();
+      yield* _getDataFromServer();
     }
   }
 
@@ -63,12 +77,17 @@ class _BaseAsyncState extends State<BaseAsync> {
   @override
   void initState() {
     stringBuffer = StringBuffer();
-    _stream().listen((event) {
-      stringBuffer.write(event);
-//      stringBuffer.writeln(event)
-      setState(() {});
-      print(event);
+    setState(() {
+      _toString().then((value) {
+        stringBuffer.write(value);
+      });
     });
+//    _stream().listen((event) {
+////      stringBuffer.write(event);
+//////      stringBuffer.writeln(event)
+////      setState(() {});
+////      print(event);
+//    });
     super.initState();
   }
 }

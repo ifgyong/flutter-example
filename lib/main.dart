@@ -51,6 +51,8 @@ import 'package:fluttertest01/tips/async_and_async*.dart';
 import 'package:fluttertest01/tips/base_provider.dart';
 import 'package:fluttertest01/tips/base_record.dart';
 import 'package:fluttertest01/tips/keepStateAlive.dart';
+import 'package:fluttertest01/tips/page_view.dart';
+import 'package:fluttertest01/tips/page_view_tabbar.dart';
 
 void main() {
   runApp(new MyApp());
@@ -125,7 +127,9 @@ class MyApp extends StatelessWidget {
         '/BaseAsynAndISOlateRoute': (_) => BaseAsynAndISOlateRoute(),
         '/BaseProviderRoute': (_) => BaseProviderRoute(),
         '/BaseRecordRoute': (_) => BaseRecordRoute(),
-        '/BaseAsync': (_) => BaseAsync()
+        '/BaseAsync': (_) => BaseAsync(),
+        '/BasePageViewRoute': (_) => BasePageViewRoute(),
+        '/FYTabbarWidget': (_) => FYTabbarWidget(),
       },
     );
   }
@@ -241,6 +245,8 @@ class MyHomeState extends State<MyHome> {
             _child('异步与同步数据流', '/BaseAsync'),
             _child('状态管理 provider', '/BaseProviderRoute'),
             _child('录音与播放', '/BaseRecordRoute'),
+            _child('pageview 联动', '/BasePageViewRoute'),
+            _child('仿头条项目', '/FYTabbarWidget')
           ]),
         ],
       ),
