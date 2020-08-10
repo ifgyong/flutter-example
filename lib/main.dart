@@ -53,6 +53,7 @@ import 'package:fluttertest01/tips/base_record.dart';
 import 'package:fluttertest01/tips/keepStateAlive.dart';
 import 'package:fluttertest01/tips/page_view.dart';
 import 'package:fluttertest01/tips/page_view_tabbar.dart';
+import 'package:fluttertest01/tips/wechat_view.dart';
 
 void main() {
   runApp(new MyApp());
@@ -130,6 +131,7 @@ class MyApp extends StatelessWidget {
         '/BaseAsync': (_) => BaseAsync(),
         '/BasePageViewRoute': (_) => BasePageViewRoute(),
         '/FYTabbarWidget': (_) => FYTabbarWidget(),
+        '/WeChatSoundWidget': (_) => WeChatSoundWidget()
       },
     );
   }
@@ -246,7 +248,8 @@ class MyHomeState extends State<MyHome> {
             _child('状态管理 provider', '/BaseProviderRoute'),
             _child('录音与播放', '/BaseRecordRoute'),
             _child('pageview 联动', '/BasePageViewRoute'),
-            _child('仿头条项目', '/FYTabbarWidget')
+            _child('仿头条项目', '/FYTabbarWidget'),
+            _child('微信语音动画', '/WeChatSoundWidget'),
           ]),
         ],
       ),
