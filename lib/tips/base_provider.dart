@@ -11,10 +11,7 @@ class BaseProviderRoute extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ChangeNotifierProvider<ProviderModel>(
-      create: (_) => ProviderModel(10),
-      child: BaseProvider(),
-    );
+    return BaseProvider();
   }
 }
 
@@ -51,25 +48,25 @@ class _BaseProviderState extends State<BaseProvider> {
           children: <Widget>[
             ChangeNotifierProvider<ProviderModel>(
               create: (_) => ProviderModel(10),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: <Widget>[
-                  Text('次数：' + context.watch<ProviderModel>().count.toString()),
-                  OutlineButton(
-                    onPressed: () {
-                      context.read<ProviderModel>().plus();
-                    },
-                    child: Icon(Icons.add),
-                  )
-                ],
-              ),
+              lazy: true,
+              builder: (ctx, child) {
+                return Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: <Widget>[
+                    Text('次数：' + ctx.watch<ProviderModel>().count.toString()),
+                    OutlineButton(
+                      onPressed: () {
+                        ctx.read<ProviderModel>().plus();
+                      },
+                      child: Icon(Icons.add),
+                    )
+                  ],
+                );
+              },
             ),
-            Container(
-              child: ChangeNotifierProvider<ProviderModel2>(
-                create: (_) => ProviderModel2(10),
-                child: _PageSecondRoute(),
-              ),
-              height: 100,
+            ChangeNotifierProvider<ProviderModel2>(
+              create: (_) => ProviderModel2(2),
+              child: _PageSecondRoute(),
             ),
             ChangeNotifierProvider<ProviderModel3>(
               create: (_) => ProviderModel3(10),
@@ -150,6 +147,7 @@ class ProviderModel3 extends ChangeNotifier {
 
   void plus() {
     this.count = _count + 1;
+    notifyListeners();
   }
 }
 
@@ -167,6 +165,7 @@ class ProviderModel2 extends ChangeNotifier {
 
   void plus({int add = 0}) {
     this.count = _count + add;
+    notifyListeners();
   }
 }
 

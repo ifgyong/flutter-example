@@ -48,11 +48,13 @@ import 'package:fluttertest01/scrollview/baseListenScrollViewOffset.dart';
 import 'package:fluttertest01/scrollview/baseSingleChildScrollView.dart';
 import 'package:fluttertest01/tips/asyn_and_isolate.dart';
 import 'package:fluttertest01/tips/async_and_async*.dart';
+import 'package:fluttertest01/tips/base_bloc.dart';
 import 'package:fluttertest01/tips/base_provider.dart';
 import 'package:fluttertest01/tips/base_record.dart';
 import 'package:fluttertest01/tips/keepStateAlive.dart';
 import 'package:fluttertest01/tips/page_view.dart';
 import 'package:fluttertest01/tips/page_view_tabbar.dart';
+import 'package:fluttertest01/tips/scoped_page.dart';
 import 'package:fluttertest01/tips/wechat_view.dart';
 
 void main() {
@@ -131,7 +133,9 @@ class MyApp extends StatelessWidget {
         '/BaseAsync': (_) => BaseAsync(),
         '/BasePageViewRoute': (_) => BasePageViewRoute(),
         '/FYTabbarWidget': (_) => FYTabbarWidget(),
-        '/WeChatSoundWidget': (_) => WeChatSoundWidget()
+        '/WeChatSoundWidget': (_) => WeChatSoundWidget(),
+        '/BaseBLoCRoute': (_) => BaseBLocRoute2(),
+        BaseScopedPateRoute.routeName: (_) => BaseScopedPateRoute()
       },
     );
   }
@@ -250,6 +254,8 @@ class MyHomeState extends State<MyHome> {
             _child('pageview 联动', '/BasePageViewRoute'),
             _child('仿头条项目', '/FYTabbarWidget'),
             _child('微信语音动画', '/WeChatSoundWidget'),
+            _child('BLoC', '/BaseBLoCRoute'),
+            _child('ScopedModel', BaseScopedPateRoute.routeName),
           ]),
         ],
       ),
