@@ -93,7 +93,7 @@ class _BaseScopedPateState extends State<BaseScopedPate> {
                           _build = '';
                         });
                     },
-                  )
+                  ),
                 ],
               )
             ],

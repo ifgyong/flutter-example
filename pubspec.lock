@@ -535,7 +535,7 @@ packages:
     source: hosted
     version: "2.0.0"
   redux:
-    dependency: transitive
+    dependency: "direct dev"
     description:
       name: redux
       url: "https://pub.flutter-io.cn"

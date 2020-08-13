@@ -66,7 +66,8 @@
   * [10.3 保持页面状态](lib/tips/keepStateAlive.dart)
   * [10.4 异步与同步数据流](lib/tips/async_and_async*.dart)
   * [10.5 微信语音动画](lib/tips/wechat_view.dart)
-  * [10.6 ScopedModel ](lib/tips/scoped_page.dart)
+  * [10.6 ScopedModel 用例和原理](lib/tips/scoped_page.dart)
+  * [10.7 redux用例和原理 ](lib/tips/redux_page.dart)
   
   
 

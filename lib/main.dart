@@ -54,6 +54,7 @@ import 'package:fluttertest01/tips/base_record.dart';
 import 'package:fluttertest01/tips/keepStateAlive.dart';
 import 'package:fluttertest01/tips/page_view.dart';
 import 'package:fluttertest01/tips/page_view_tabbar.dart';
+import 'package:fluttertest01/tips/redux_page.dart';
 import 'package:fluttertest01/tips/scoped_page.dart';
 import 'package:fluttertest01/tips/wechat_view.dart';
 
@@ -135,7 +136,8 @@ class MyApp extends StatelessWidget {
         '/FYTabbarWidget': (_) => FYTabbarWidget(),
         '/WeChatSoundWidget': (_) => WeChatSoundWidget(),
         '/BaseBLoCRoute': (_) => BaseBLocRoute2(),
-        BaseScopedPateRoute.routeName: (_) => BaseScopedPateRoute()
+        BaseScopedPateRoute.routeName: (_) => BaseScopedPateRoute(),
+        BaseReduxPateRoute.routeName: (_) => BaseReduxPateRoute()
       },
     );
   }
@@ -254,8 +256,9 @@ class MyHomeState extends State<MyHome> {
             _child('pageview 联动', '/BasePageViewRoute'),
             _child('仿头条项目', '/FYTabbarWidget'),
             _child('微信语音动画', '/WeChatSoundWidget'),
-            _child('BLoC', '/BaseBLoCRoute'),
-            _child('ScopedModel', BaseScopedPateRoute.routeName),
+            _child('状态管理(1)ScopedModel', BaseScopedPateRoute.routeName),
+            _child('状态管理(2)redux', BaseReduxPateRoute.routeName),
+            _child('状态管理(3)BLoC', '/BaseBLoCRoute'),
           ]),
         ],
       ),

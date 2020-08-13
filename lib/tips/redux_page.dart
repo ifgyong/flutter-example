@@ -1,0 +1,154 @@
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_redux/flutter_redux.dart';
+import 'package:redux/redux.dart';
+
+///
+/// Created by fgyong on 2020/8/12.
+///
+
+class BaseReduxPateRoute extends StatelessWidget {
+  Store<int> store;
+  @override
+  Widget build(BuildContext context) {
+    return _body();
+  }
+
+  static String get routeName => 'BaseReduxPateRoute';
+
+  Widget _body() => BaseScopedPate();
+}
+
+class BaseScopedPate extends StatefulWidget {
+  BaseScopedPate({Key key}) : super(key: key);
+
+  @override
+  _BaseScopedPateState createState() => _BaseScopedPateState();
+}
+
+class _BaseScopedPateState extends State<BaseScopedPate> {
+  String _build = '';
+  final store = Store(counterReducer, initialState: _Model());
+  @override
+  Widget build(BuildContext context) {
+    _build += 'p1 build \n';
+    return StoreProvider(
+      store: store,
+      child: Scaffold(
+          appBar: AppBar(
+            title: Text('ScopedModel'),
+          ),
+          body: Center(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                Text(_build),
+                StoreConnector<_Model, String>(
+                  converter: (store) => store.state.value.toString(),
+                  builder: (context, count) {
+                    _build += 's1';
+                    return Text('value:$count');
+                  },
+                ),
+                StoreConnector<_Model, String>(
+                  converter: (store) => store.state.count.toString(),
+                  builder: (context, count) {
+                    _build += 's2';
+                    return Text('count:$count');
+                  },
+                ),
+                StoreConnector<_Model, VoidCallback>(
+                  converter: (store) {
+                    return () => store.dispatch(Actions.IncrementValue);
+                  },
+                  builder: (context, callback) {
+                    return OutlineButton(
+                      child: Text('+1 value'),
+                      onPressed: callback,
+                    );
+                  },
+                ),
+                StoreConnector<_Model, VoidCallback>(
+                  converter: (store) {
+                    return () => store.dispatch(Actions.IncrementValue);
+                  },
+                  builder: (context, callback) {
+                    return OutlineButton(
+                      child: Text('-1 value'),
+                      onPressed: callback,
+                    );
+                  },
+                ),
+                StoreConnector<_Model, VoidCallback>(
+                  converter: (store) {
+                    return () => store.dispatch(Actions.IncrementCount);
+                  },
+                  builder: (context, callback) {
+                    return OutlineButton(
+                      child: Text('+count'),
+                      onPressed: callback,
+                    );
+                  },
+                ),
+                StoreConnector<_Model, VoidCallback>(
+                  converter: (store) {
+                    return () => store.dispatch(Actions.DecrementCount);
+                  },
+                  builder: (context, callback) {
+                    return OutlineButton(
+                      child: Text('-count'),
+                      onPressed: callback,
+                    );
+                  },
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: <Widget>[
+                    OutlineButton(
+                      child: Icon(Icons.refresh),
+                      onPressed: () {
+                        if (mounted) setState(() {});
+                      },
+                    ),
+                    OutlineButton(
+                      child: Icon(Icons.clear),
+                      onPressed: () {
+                        if (mounted)
+                          setState(() {
+                            _build = '';
+                          });
+                      },
+                    ),
+                  ],
+                )
+              ],
+            ),
+          )),
+    );
+  }
+}
+
+enum Actions { IncrementValue, IncrementCount, DecrementCount, DecrementValue }
+
+class _Model {
+  int value, count;
+  _Model({this.value, this.count}) {
+    value ??= 0;
+    count ??= 0;
+  }
+}
+
+_Model counterReducer(_Model state, dynamic action) {
+  if (action == Actions.IncrementValue) {
+    state.value += 1;
+    return state;
+  } else if (action == Actions.DecrementCount) {
+    state.count -= 1;
+    return state;
+  } else if (action == Actions.IncrementCount) {
+    state.count += 1;
+  } else if (action == Actions.DecrementValue) {
+    state.value -= 1;
+  }
+  return state;
+}
