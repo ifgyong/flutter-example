@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_redux/flutter_redux.dart';
@@ -16,19 +18,57 @@ class BaseReduxPateRoute extends StatelessWidget {
 
   static String get routeName => 'BaseReduxPateRoute';
 
-  Widget _body() => BaseScopedPate();
+  Widget _body() => BaseReduxPage();
 }
 
-class BaseScopedPate extends StatefulWidget {
-  BaseScopedPate({Key key}) : super(key: key);
+class BaseReduxPage extends StatefulWidget {
+  BaseReduxPage({Key key}) : super(key: key);
 
   @override
-  _BaseScopedPateState createState() => _BaseScopedPateState();
+  _BaseBaseReduxPageState createState() => _BaseBaseReduxPageState();
 }
 
-class _BaseScopedPateState extends State<BaseScopedPate> {
+class _MiddleWare<_Model> extends MiddlewareClass<_Model> {
+  @override
+  call(Store<_Model> store, action, next) {
+    if (action == Actions.DecrementValue) {}
+    print(action);
+    next(action);
+  }
+}
+
+class _BaseBaseReduxPageState extends State<BaseReduxPage> {
   String _build = '';
-  final store = Store(counterReducer, initialState: _Model());
+  Store<_Model> store;
+  mw(Store<_Model> store, action, NextDispatcher next) {
+    print('1:${new DateTime.now()}: $action');
+    next(action);
+  }
+
+  mw2(Store<_Model> store, action, NextDispatcher next) {
+    print('2:${new DateTime.now()}: $action');
+    next(action);
+  }
+
+  StreamController _streamController;
+  _Model _model = _Model();
+  @override
+  void initState() {
+    store = Store(counterReducer, initialState: _Model(), middleware: [
+      mw,
+      mw2,
+    ]);
+    store.onChange.listen((event) {
+      print('init $event');
+    });
+    _streamController = StreamController.broadcast()
+      ..stream.listen((event) {
+        print('init${event}');
+      });
+    _streamController.add(counterReducer);
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     _build += 'p1 build \n';
@@ -36,12 +76,24 @@ class _BaseScopedPateState extends State<BaseScopedPate> {
       store: store,
       child: Scaffold(
           appBar: AppBar(
-            title: Text('ScopedModel'),
+            title: Text('ReduxModel'),
           ),
           body: Center(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
+                OutlineButton(
+                  child: Text('change'),
+                  onPressed: () {
+                    _model = counterReducer(_model, Actions.DecrementValue);
+                  },
+                ),
+//                StreamBuilder<_Model>(
+//                  stream: _streamController.stream,
+//                  builder: (context, snapshot) {
+//                    return Text(snapshot.data.value.toString());
+//                  },
+//                ),
                 Text(_build),
                 StoreConnector<_Model, String>(
                   converter: (store) => store.state.value.toString(),
@@ -70,7 +122,7 @@ class _BaseScopedPateState extends State<BaseScopedPate> {
                 ),
                 StoreConnector<_Model, VoidCallback>(
                   converter: (store) {
-                    return () => store.dispatch(Actions.IncrementValue);
+                    return () => store.dispatch(Actions.DecrementValue);
                   },
                   builder: (context, callback) {
                     return OutlineButton(
@@ -139,6 +191,7 @@ class _Model {
 }
 
 _Model counterReducer(_Model state, dynamic action) {
+//  print(0);
   if (action == Actions.IncrementValue) {
     state.value += 1;
     return state;
