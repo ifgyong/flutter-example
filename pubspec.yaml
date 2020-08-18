@@ -52,6 +52,7 @@ dev_dependencies:
   scoped_model: ^0.3.0
   flutter_redux: ^0.6.0
   redux: ^4.0.0+3
+  fish_redux: ^0.3.4
 
 
 

@@ -205,6 +205,13 @@
             </list>
           </value>
         </entry>
+        <entry key="fish_redux">
+          <value>
+            <list>
+              <option value="$USER_HOME$/flutterSDK/flutter1.17-stable/.pub-cache/hosted/pub.flutter-io.cn/fish_redux-0.3.4/lib" />
+            </list>
+          </value>
+        </entry>
         <entry key="fixnum">
           <value>
             <list>
@@ -755,6 +762,7 @@
       <root url="file://$USER_HOME$/flutterSDK/flutter1.17-stable/.pub-cache/hosted/pub.flutter-io.cn/dio-3.0.9/lib" />
       <root url="file://$USER_HOME$/flutterSDK/flutter1.17-stable/.pub-cache/hosted/pub.flutter-io.cn/equatable-1.2.3/lib" />
       <root url="file://$USER_HOME$/flutterSDK/flutter1.17-stable/.pub-cache/hosted/pub.flutter-io.cn/file-5.2.1/lib" />
+      <root url="file://$USER_HOME$/flutterSDK/flutter1.17-stable/.pub-cache/hosted/pub.flutter-io.cn/fish_redux-0.3.4/lib" />
       <root url="file://$USER_HOME$/flutterSDK/flutter1.17-stable/.pub-cache/hosted/pub.flutter-io.cn/fixnum-0.10.11/lib" />
       <root url="file://$USER_HOME$/flutterSDK/flutter1.17-stable/.pub-cache/hosted/pub.flutter-io.cn/flutter_bloc-6.0.1/lib" />
       <root url="file://$USER_HOME$/flutterSDK/flutter1.17-stable/.pub-cache/hosted/pub.flutter-io.cn/flutter_easyhub-1.0.1+0.10/lib" />

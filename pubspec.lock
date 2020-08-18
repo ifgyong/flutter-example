@@ -204,6 +204,13 @@ packages:
       url: "https://pub.flutter-io.cn"
     source: hosted
     version: "5.2.1"
+  fish_redux:
+    dependency: "direct dev"
+    description:
+      name: fish_redux
+      url: "https://pub.flutter-io.cn"
+    source: hosted
+    version: "0.3.4"
   fixnum:
     dependency: transitive
     description:
