@@ -207,6 +207,7 @@ class _BaseProviderState extends State<BaseProvider> {
 //                return FutureModel(value: 99);
 //              },
 //            )
+            StreamProvider(create: null)
           ],
         ),
       ),

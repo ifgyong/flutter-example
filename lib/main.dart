@@ -140,6 +140,7 @@ class MyApp extends StatelessWidget {
         BaseScopedPateRoute.routeName: (_) => BaseScopedPateRoute(),
         BaseReduxPateRoute.routeName: (_) => BaseReduxPateRoute(),
         BaseFishReduxPage.routeName: (_) => BaseFishReduxPage(),
+        BaseBLoCPageRoute.routeName: (_) => BaseBLoCPageRoute(),
       },
     );
   }
@@ -259,7 +260,7 @@ class MyHomeState extends State<MyHome> {
             _child('微信语音动画', '/WeChatSoundWidget'),
             _child('状态管理(1)ScopedModel', BaseScopedPateRoute.routeName),
             _child('状态管理(2)redux', BaseReduxPateRoute.routeName),
-            _child('状态管理(3)BLoC', '/BaseBLoCRoute'),
+            _child('状态管理(3)BLoC', BaseBLoCPageRoute.routeName),
             _child('状态管理(4)provider', '/BaseProviderRoute'),
             _child('阿里fish(5) redux', BaseFishReduxPage.routeName),
           ]),

@@ -9,7 +9,47 @@ import 'package:equatable/equatable.dart';
 /// Created by fgyong on 2020/8/11.
 ///
 
+class BaseBLoCPageRoute extends StatefulWidget {
+  BaseBLoCPageRoute({Key key}) : super(key: key);
+
+  @override
+  _BaseBLoCPageRouteState createState() => _BaseBLoCPageRouteState();
+  static String get routeName => 'BaseBLoCRoute';
+}
+
+class _BaseBLoCPageRouteState extends State<BaseBLoCPageRoute> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('BLoC'),
+      ),
+      body: _body(),
+    );
+  }
+
+  Widget _body() {
+    return CustomScrollView(
+      slivers: <Widget>[
+        SliverToBoxAdapter(
+          child: OutlineButton(
+            child: Text('简单数字例子'),
+            onPressed: () {
+              push(BaseBLocRoute2());
+            },
+          ),
+        )
+      ],
+    );
+  }
+
+  void push<T extends StatefulWidget>(T widget) {
+    Navigator.of(context).push(MaterialPageRoute(builder: (_) => widget));
+  }
+}
+
 class BaseBLocRoute2 extends StatefulWidget {
+  /// 局部刷新 数字加减例子页面
   BaseBLocRoute2({Key key}) : super(key: key);
 
   @override
@@ -66,19 +106,12 @@ class BaseBLoCRoute extends StatefulWidget {
 class _BaseBLoCRouteState extends State<BaseBLoCRoute> {
   @override
   Widget build(BuildContext context) {
-    print('_BaseBLoCRouteState build +1');
+    print('page build +1');
     return Scaffold(
       appBar: AppBar(
-        title: Text('BLoC'),
+        title: Text('局部刷新数字加减'),
       ),
       body: _body(),
-      floatingActionButton: FloatingActionButton(
-        child: Icon(Icons.add),
-        onPressed: () {
-//          BlocProvider.of<CounterCubit>(context).increment();
-          BlocProvider.of<CounterCubit2>(context).request();
-        },
-      ),
     );
   }
 
@@ -87,16 +120,83 @@ class _BaseBLoCRouteState extends State<BaseBLoCRoute> {
       child: CustomScrollView(
         slivers: <Widget>[
           SliverToBoxAdapter(
-            child: BlocBuilder<CounterCubit, int>(
+            child: BlocBuilder<CounterCubit, Model>(
               builder: (_, count) {
-                print('_body BlocBuilder CounterCubit ');
+                print('CounterCubit1 ');
+                return Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: <Widget>[
+                    Padding(
+                      child: Text(
+                        'count: ${count.count}',
+                      ),
+                      padding: EdgeInsets.all(20),
+                    ),
+                    OutlineButton(
+                      child: Icon(Icons.arrow_drop_up),
+                      onPressed: () {
+                        context.bloc<CounterCubit>().addCount(1);
+                      },
+                    ),
+                    OutlineButton(
+                      child: Icon(Icons.arrow_drop_down),
+                      onPressed: () {
+                        context.bloc<CounterCubit>().addCount(-1);
+                      },
+                    )
+                  ],
+                );
+              },
+              buildWhen: (m1, m2) => m1.count != m2.count,
+            ),
+          ),
+          SliverToBoxAdapter(
+            child: SizedBox(
+              height: 50,
+            ),
+          ),
+          SliverToBoxAdapter(
+            child: BlocBuilder<CounterCubit, Model>(
+              builder: (_, count) {
+                print('CounterCubit age build ');
+                return Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: <Widget>[
+                    Padding(
+                      child: Text(
+                        'age:${count.age}',
+                      ),
+                      padding: EdgeInsets.all(20),
+                    ),
+                    OutlineButton(
+                      child: Icon(Icons.arrow_drop_up),
+                      onPressed: () {
+                        context.bloc<CounterCubit>().addAge(1);
+                      },
+                    ),
+                    OutlineButton(
+                      child: Icon(Icons.arrow_drop_down),
+                      onPressed: () {
+                        context.bloc<CounterCubit>().addAge(-1);
+                      },
+                    )
+                  ],
+                );
+              },
+              buildWhen: (m1, m2) => m1.age != m2.age,
+            ),
+          ),
+          SliverToBoxAdapter(
+            child: BlocBuilder<CounterCubit2, Model>(
+              builder: (_, count) {
+                print('CounterCubit2 ');
                 return Column(
                   children: <Widget>[
-                    Text('$count'),
+                    Text('CounterCubit2: ${count.age}'),
                     OutlineButton(
-                      child: Icon(Icons.details),
+                      child: Icon(Icons.add),
                       onPressed: () {
-                        context.bloc<CounterCubit>().decrement();
+                        context.bloc<CounterCubit2>().addAge(1);
                       },
                     )
                   ],
@@ -105,23 +205,41 @@ class _BaseBLoCRouteState extends State<BaseBLoCRoute> {
             ),
           ),
           SliverToBoxAdapter(
-            child: BlocBuilder<CounterCubit2, Model>(
-              builder: (_, count) {
-                print('_body2 BlocBuilder2 CounterCubit2 model ');
-                return Column(
-                  children: <Widget>[
-                    Text('$count'),
-                    OutlineButton(
-                      child: Icon(Icons.details),
-                      onPressed: () {
-                        context.bloc<CounterCubit2>().request();
-                      },
-                    )
-                  ],
-                );
-              },
-            ),
-          )
+            child: BlocConsumer<CounterCubit, Model>(builder: (ctx, state) {
+              return Column(
+                children: <Widget>[
+                  Text(
+                      'age:${context.bloc<CounterCubit>().state.age} count:${context.bloc<CounterCubit>().state.count}'),
+                  OutlineButton(
+                    child: Text('age+1'),
+                    onPressed: () {
+                      context.bloc<CounterCubit>().addAge(1);
+                    },
+                  ),
+                  OutlineButton(
+                    child: Text('age-1'),
+                    onPressed: () {
+                      context.bloc<CounterCubit>().addAge(-1);
+                    },
+                  ),
+                  OutlineButton(
+                    child: Text('count+1'),
+                    onPressed: () {
+                      context.bloc<CounterCubit>().addCount(1);
+                    },
+                  ),
+                  OutlineButton(
+                    child: Text('count-1'),
+                    onPressed: () {
+                      context.bloc<CounterCubit>().addCount(-1);
+                    },
+                  )
+                ],
+              );
+            }, listener: (ctx, state) {
+              if (state.age + state.count == 10) Navigator.maybePop(context);
+            }),
+          ),
         ],
       ),
     );
@@ -134,51 +252,67 @@ class _BaseBLoCRouteState extends State<BaseBLoCRoute> {
   }
 }
 
-class CounterCubit extends Cubit<int> {
-  CounterCubit() : super(0);
+class CounterCubit extends Cubit<Model> {
+  CounterCubit() : super(Model(count: 0, name: '老王'));
 
   void increment() {
     print('CounterCubit +1');
-
-    emit(state + 1);
+    emit(state.addCount(1));
   }
 
   void decrement() {
     print('CounterCubit -1');
-    emit(state - 1);
+    emit(state.clone());
+  }
+
+  void addAge(int v) {
+    emit(state.addAge(v));
+  }
+
+  void addCount(int v) {
+    emit(state.addCount(v));
   }
 }
 
 // ignore: must_be_immutable
 class Model extends Equatable {
   int count;
+  int age;
   String name;
-  List<String> list;
-  Model({this.count, this.name, this.list});
+  Model({this.count = 0, this.name, this.age = 0});
 
   @override
-  List<Object> get props => [count, name, list];
+  List<Object> get props => [count, name, age];
+  Model addCount(int value) {
+    return clone()..count = count + value;
+  }
+
+  Model addAge(int value) {
+    return clone()..age = age + value;
+  }
+
+  Model clone() {
+    return Model(count: count, name: name, age: age);
+  }
+
+  @override
+  bool operator ==(Object other) {
+    if (other is Model)
+      return this.count == other.count &&
+          age == other.count &&
+          name == other.name;
+    return false;
+  }
+
+  @override
+  int get hashCode => super.hashCode;
 }
 
 class CounterCubit2 extends Cubit<Model> {
   CounterCubit2() : super(Model());
 
-  void increment() {
-    print('CounterCubit2 CounterCubit +1');
-//    emit(state.count + 1);
-  }
-
-  void request() {
-    state.list ??= ['1'];
-    var list = state.list;
-    list.add('next');
-
-    emit(state);
-  }
-
-  void decrement() {
-    print('CounterCubit -1');
-//    emit(state - 1);
+  Model addAge(int v) {
+    emit(state.addAge(v));
   }
 }
 
