@@ -51,6 +51,7 @@ import 'package:fluttertest01/tips/async_and_async*.dart';
 import 'package:fluttertest01/tips/base_bloc.dart';
 import 'package:fluttertest01/tips/base_provider.dart';
 import 'package:fluttertest01/tips/base_record.dart';
+import 'package:fluttertest01/tips/bloc/base_login_cubit.dart';
 import 'package:fluttertest01/tips/fish_redux_page.dart';
 import 'package:fluttertest01/tips/keepStateAlive.dart';
 import 'package:fluttertest01/tips/page_view.dart';
@@ -141,6 +142,7 @@ class MyApp extends StatelessWidget {
         BaseReduxPateRoute.routeName: (_) => BaseReduxPateRoute(),
         BaseFishReduxPage.routeName: (_) => BaseFishReduxPage(),
         BaseBLoCPageRoute.routeName: (_) => BaseBLoCPageRoute(),
+        BaseLoginPageRoute.routeName: (_) => BaseLoginPageRoute(),
       },
     );
   }

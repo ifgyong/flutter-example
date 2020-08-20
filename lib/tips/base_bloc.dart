@@ -4,6 +4,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:fluttertest01/baseWidget/baseState.dart';
 import 'package:fluttertest01/test.dart';
 import 'package:equatable/equatable.dart';
+import 'package:fluttertest01/tips/bloc/login_bloc/login_bloc_page.dart';
+import '../tips/bloc/base_login_cubit.dart';
 
 ///
 /// Created by fgyong on 2020/8/11.
@@ -33,9 +35,25 @@ class _BaseBLoCPageRouteState extends State<BaseBLoCPageRoute> {
       slivers: <Widget>[
         SliverToBoxAdapter(
           child: OutlineButton(
-            child: Text('简单数字例子'),
+            child: Text('简单数字加减例子'),
             onPressed: () {
               push(BaseBLocRoute2());
+            },
+          ),
+        ),
+        SliverToBoxAdapter(
+          child: OutlineButton(
+            child: Text('login Cubit'),
+            onPressed: () {
+              push(BaseLoginPageRoute());
+            },
+          ),
+        ),
+        SliverToBoxAdapter(
+          child: OutlineButton(
+            child: Text('login BLoC'),
+            onPressed: () {
+              push(LoginBlocRoute());
             },
           ),
         )
@@ -43,7 +61,7 @@ class _BaseBLoCPageRouteState extends State<BaseBLoCPageRoute> {
     );
   }
 
-  void push<T extends StatefulWidget>(T widget) {
+  void push(Widget widget) {
     Navigator.of(context).push(MaterialPageRoute(builder: (_) => widget));
   }
 }
@@ -79,29 +97,6 @@ class BaseBLoCRoute extends StatefulWidget {
   @override
   _BaseBLoCRouteState createState() => _BaseBLoCRouteState();
 }
-
-/// 操作事件 用来区分不同的动作
-//enum CounterEvent {
-//  increment,
-//  decrement,
-//}
-//
-//class CounterBloc extends Bloc<CounterEvent, int> {
-//  CounterBloc(int initialState) : super(0);
-//
-//  @override
-//  Stream<int> mapEventToState(CounterEvent event) async* {
-//    switch (event) {
-//      case CounterEvent.decrement:
-//        print('-1');
-//        yield state - 1;
-//        break;
-//      case CounterEvent.increment:
-//        print('+1');
-//        yield state + 1;
-//    }
-//  }
-//}
 
 class _BaseBLoCRouteState extends State<BaseBLoCRoute> {
   @override
@@ -299,7 +294,7 @@ class Model extends Equatable {
   bool operator ==(Object other) {
     if (other is Model)
       return this.count == other.count &&
-          age == other.count &&
+          age == other.age &&
           name == other.name;
     return false;
   }

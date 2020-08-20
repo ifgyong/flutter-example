@@ -69,6 +69,7 @@
   * [10.6 ScopedModel 用例和原理 局部刷新](lib/tips/scoped_page.dart)
   * [10.7 redux用例和原理 局部刷新](lib/tips/redux_page.dart)
   * [10.8 provider 用例 例子 局部刷新](lib/tips/base_provider.dart)
+  * [10.9 BLoC 局部刷新/数字加减/登陆的多种写法(cubit/bloc)](lib/tips/base_bloc.dart)
   
   
 
