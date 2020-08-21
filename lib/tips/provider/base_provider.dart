@@ -1,15 +1,62 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:fluttertest01/tips/provider/base_stream_pag.dart';
 import 'package:provider/provider.dart';
 
 ///
 /// Created by fgyong on 2020/7/30.
 ///
+class BaseProviderRouteProvider extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return BaseProviderRouteList();
+  }
+
+  static String get routeName => '/BaseProviderRouteProvider';
+}
+
+class BaseProviderRouteList extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('BaseProviderRouteProvider'),
+      ),
+      body: _body(),
+    );
+  }
+
+  Widget _body() {
+    return Builder(builder: (context) {
+      return CustomScrollView(
+        slivers: <Widget>[
+          item('数字加减', () {
+            Navigator.of(context).push(BaseProviderRoute.pageRoute);
+          }),
+          item('定时器', () {
+            Navigator.push(context, BaseProviderStreamRoute.pageRoute);
+          })
+        ],
+      );
+    });
+  }
+
+  Widget item(String name, GestureTapCallback callback) {
+    return SliverToBoxAdapter(
+      child: OutlineButton(
+        child: Text('$name'),
+        onPressed: callback,
+      ),
+    );
+  }
+}
 
 class BaseProviderRoute extends StatelessWidget {
   BaseProviderRoute({Key key}) : super(key: key);
 
+  static MaterialPageRoute get pageRoute =>
+      MaterialPageRoute(builder: (_) => BaseProviderRoute());
   @override
   Widget build(BuildContext context) {
     return MultiProvider(
@@ -195,19 +242,7 @@ class _BaseProviderState extends State<BaseProvider> {
             SizedBox(
               height: 40,
             ),
-//            FutureProvider<FutureModel>(
-//              create: FutureModel.doHttp,
-//              lazy: false,
-//              child: Text('0'),
-//              builder: (ctx, child) {
-//                return Text(
-//                    '${ctx.select<FutureModel, int>((value) => value?.value) ?? '-1'}');
-//              },
-//              catchError: (BuildContext context, Object error) {
-//                return FutureModel(value: 99);
-//              },
-//            )
-            StreamProvider(create: null)
+//            StreamProvider(create: null)
           ],
         ),
       ),

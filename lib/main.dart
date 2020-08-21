@@ -49,7 +49,8 @@ import 'package:fluttertest01/scrollview/baseSingleChildScrollView.dart';
 import 'package:fluttertest01/tips/asyn_and_isolate.dart';
 import 'package:fluttertest01/tips/async_and_async*.dart';
 import 'package:fluttertest01/tips/base_bloc.dart';
-import 'package:fluttertest01/tips/base_provider.dart';
+import 'package:fluttertest01/tips/base_key.dart';
+import 'package:fluttertest01/tips/provider/base_provider.dart';
 import 'package:fluttertest01/tips/base_record.dart';
 import 'package:fluttertest01/tips/bloc/base_login_cubit.dart';
 import 'package:fluttertest01/tips/fish_redux_page.dart';
@@ -143,6 +144,8 @@ class MyApp extends StatelessWidget {
         BaseFishReduxPage.routeName: (_) => BaseFishReduxPage(),
         BaseBLoCPageRoute.routeName: (_) => BaseBLoCPageRoute(),
         BaseLoginPageRoute.routeName: (_) => BaseLoginPageRoute(),
+        BaseProviderRouteProvider.routeName: (_) => BaseProviderRouteProvider(),
+        BaseKeyPage.routeName: (_) => BaseKeyPage(),
       },
     );
   }
@@ -263,8 +266,9 @@ class MyHomeState extends State<MyHome> {
             _child('状态管理(1)ScopedModel', BaseScopedPateRoute.routeName),
             _child('状态管理(2)redux', BaseReduxPateRoute.routeName),
             _child('状态管理(3)BLoC', BaseBLoCPageRoute.routeName),
-            _child('状态管理(4)provider', '/BaseProviderRoute'),
+            _child('状态管理(4)provider', BaseProviderRouteProvider.routeName),
             _child('阿里fish(5) redux', BaseFishReduxPage.routeName),
+            _child('key的妙用', BaseKeyPage.routeName),
           ]),
         ],
       ),
