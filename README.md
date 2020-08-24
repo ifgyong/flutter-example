@@ -78,9 +78,9 @@
   
 > [<<Dart 异步与多线程>>](https://juejin.im/post/6855129006103576584)
 >
-> [<<Flutter 详解（一、深入了解状态管理--ScopeModel）>>](https://juejin.im/post/6860001014289416205)
+> [<<Flutter 详解（一、深入了解状态管理--ScopeModel)>>](https://juejin.im/post/6860001014289416205)
 >
-> [<<Flutter 详解(二、深入了解状态管理--Redux)>>](https://juejin.im/post/6860747643493515278)
+> [<<Flutter 详解 (二、深入了解状态管理--Redux)>>](https://juejin.im/post/6860747643493515278)
 >
 > [<<Flutter 详解（三、深入了解状态管理--Provider)>>](https://juejin.im/post/6862150535043252237)
 >
