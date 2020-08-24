@@ -89,6 +89,7 @@ class _BaseKeyPageState extends State<BaseKeyPage> {
 }
 
 class _Container extends StatefulWidget {
+  /// 使用[StatefulWidget] 的[key]来获取[state]
   _Container(Key key) : super(key: key);
   @override
   State<StatefulWidget> createState() {
@@ -101,6 +102,8 @@ class __ContainerState extends State<_Container> {
   @override
   Widget build(BuildContext context) {
     count += 1;
+
+    /// 每次build 都更换颜色
     return Container(
       height: 100,
       width: 100,

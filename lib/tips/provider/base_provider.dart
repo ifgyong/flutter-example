@@ -1,7 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:fluttertest01/tips/provider/base_stream_pag.dart';
+import 'package:fluttertest01/tips/provider/base_provider_pan_zan.dart';
+import 'package:fluttertest01/tips/provider/base_stream_pge.dart';
 import 'package:provider/provider.dart';
 
 ///
@@ -36,6 +37,9 @@ class BaseProviderRouteList extends StatelessWidget {
           }),
           item('定时器', () {
             Navigator.push(context, BaseProviderStreamRoute.pageRoute);
+          }),
+          item('数字加减监听跳转新页面', () {
+            Navigator.push(context, BasePinZanProviderRoute.route);
           })
         ],
       );

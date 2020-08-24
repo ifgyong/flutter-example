@@ -50,6 +50,7 @@ import 'package:fluttertest01/tips/asyn_and_isolate.dart';
 import 'package:fluttertest01/tips/async_and_async*.dart';
 import 'package:fluttertest01/tips/base_bloc.dart';
 import 'package:fluttertest01/tips/base_key.dart';
+import 'package:fluttertest01/tips/layout/base_layout.dart';
 import 'package:fluttertest01/tips/provider/base_provider.dart';
 import 'package:fluttertest01/tips/base_record.dart';
 import 'package:fluttertest01/tips/bloc/base_login_cubit.dart';
@@ -58,6 +59,7 @@ import 'package:fluttertest01/tips/keepStateAlive.dart';
 import 'package:fluttertest01/tips/page_view.dart';
 import 'package:fluttertest01/tips/page_view_tabbar.dart';
 import 'package:fluttertest01/tips/redux_page.dart';
+import 'package:fluttertest01/tips/rx_dart/base_rxDart.dart';
 import 'package:fluttertest01/tips/scoped_page.dart';
 import 'package:fluttertest01/tips/wechat_view.dart';
 
@@ -146,6 +148,8 @@ class MyApp extends StatelessWidget {
         BaseLoginPageRoute.routeName: (_) => BaseLoginPageRoute(),
         BaseProviderRouteProvider.routeName: (_) => BaseProviderRouteProvider(),
         BaseKeyPage.routeName: (_) => BaseKeyPage(),
+        BaseLayoutPage.routeName: (_) => BaseLayoutPage(),
+        BaseDartPage.routeName: (_) => BaseDartPage(),
       },
     );
   }
@@ -269,6 +273,8 @@ class MyHomeState extends State<MyHome> {
             _child('状态管理(4)provider', BaseProviderRouteProvider.routeName),
             _child('阿里fish(5) redux', BaseFishReduxPage.routeName),
             _child('key的妙用', BaseKeyPage.routeName),
+            _child('layoutBuilder', BaseLayoutPage.routeName),
+            _child('rxdart', BaseDartPage.routeName),
           ]),
         ],
       ),
