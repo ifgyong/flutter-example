@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'dart:ffi';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -43,10 +44,13 @@ class _BaseDartPageState extends State<BaseDartPage> {
 
   StreamController<String> _streamController;
   PublishSubject _subject;
+  StreamSubscription<String> _subscription;
   @override
   void initState() {
     _streamController = StreamController();
-    _streamController.stream..where((event) => event.length < 10);
+//    _subscription  =StreamSubscription()
+    _streamController.stream.listen((event) {});
+    _streamController.add('data');
     //    _subject = PublishSubject();
 //    _subject.stream..where((event) => event.length < 5);
 //
@@ -58,6 +62,7 @@ class _BaseDartPageState extends State<BaseDartPage> {
 //    Rx.timer<int>(0, Duration(seconds: 1)).listen((event) {
 //      print(event);
 //    });
+    print(Zone.root.toString());
     super.initState();
   }
 }

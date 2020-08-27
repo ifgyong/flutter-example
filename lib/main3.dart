@@ -7,6 +7,22 @@ import 'package:flutter/material.dart';
 /// Created by fgyong on 2020/7/29.
 ///
 main() async {
+  runApp(HomeRoute());
+}
+
+class HomeRoute extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Center(
+      child: Text('Hello world'),
+    );
+  }
+}
+
+class HomeViewModel extends ChangeNotifier {}
+
+/// 创建并管理 多线程
+void m() async {
   var ourFirstReceivePort = new ReceivePort();
 
   await Isolate.spawn(echo, ourFirstReceivePort.sendPort);

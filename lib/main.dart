@@ -1,67 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:fluttertest01/Features/base_will_pop.dart';
-import 'package:fluttertest01/animation/base_animaiton.dart';
-import 'package:fluttertest01/animation/base_animation_diy.dart';
-import 'package:fluttertest01/animation/base_animation_switch.dart';
-import 'package:fluttertest01/animation/base_hreo.dart';
-import 'package:fluttertest01/animation/base_pageRoute.dart';
-import 'package:fluttertest01/animation/base_tagger_animation.dart';
-import 'package:fluttertest01/baseWidget/baseButtons.dart';
-import 'package:fluttertest01/baseWidget/baseIndicator.dart';
-import 'package:fluttertest01/baseWidget/baseState.dart';
-import 'package:fluttertest01/baseWidget/baseSwitch.dart';
-import 'package:fluttertest01/baseWidget/baseText.dart';
-import 'package:fluttertest01/baseWidget/baseTextField.dart';
-import 'package:fluttertest01/baseWidget/dialog.dart';
-import 'package:fluttertest01/baseWidget/imgAndIcon.dart';
-import 'package:fluttertest01/comment/config.dart';
-import 'package:fluttertest01/container/base_bars.dart';
-import 'package:fluttertest01/container/base_container.dart';
-import 'package:fluttertest01/container/base_decorateBox.dart';
-import 'package:fluttertest01/container/base_clip.dart';
-import 'package:fluttertest01/container/base_constraints.dart';
-import 'package:fluttertest01/container/base_padding.dart';
-import 'package:fluttertest01/container/base_transform.dart';
-import 'package:fluttertest01/features/base_color_and_theme.dart';
-import 'package:fluttertest01/features/base_eventbus.dart';
-import 'package:fluttertest01/features/base_future_stream.dart';
-import 'package:fluttertest01/features/base_gesturedetetor.dart';
-import 'package:fluttertest01/features/base_notification.dart';
-import 'package:fluttertest01/features/base_touch_handle.dart';
-import 'package:fluttertest01/features/share_data.dart';
-import 'package:fluttertest01/file_and_http/fileAction.dart';
-import 'package:fluttertest01/file_and_http/http_client.dart';
-import 'package:fluttertest01/file_and_http/http_dio.dart';
-import 'package:fluttertest01/file_and_http/http_socket.dart';
-import 'package:fluttertest01/file_and_http/json_to_model.dart';
-import 'package:fluttertest01/layout/baseFlex.dart';
-import 'package:fluttertest01/layout/base_align.dart';
-import 'package:fluttertest01/layout/base_flow_and_wrap.dart';
-import 'package:fluttertest01/layout/base_row_and_column.dart';
-import 'package:fluttertest01/layout/base_stack.dart';
-import 'package:fluttertest01/scrollview/scrollview.dart';
-import 'package:fluttertest01/scrollview/baseCustomScrollview.dart';
-import 'package:fluttertest01/scrollview/baseGridView.dart';
-import 'package:fluttertest01/scrollview/baseListView.dart';
-import 'package:fluttertest01/scrollview/baseListenScrollViewOffset.dart';
-import 'package:fluttertest01/scrollview/baseSingleChildScrollView.dart';
-import 'package:fluttertest01/tips/asyn_and_isolate.dart';
-import 'package:fluttertest01/tips/async_and_async*.dart';
-import 'package:fluttertest01/tips/base_bloc.dart';
-import 'package:fluttertest01/tips/base_key.dart';
-import 'package:fluttertest01/tips/layout/base_layout.dart';
-import 'package:fluttertest01/tips/provider/base_provider.dart';
-import 'package:fluttertest01/tips/base_record.dart';
-import 'package:fluttertest01/tips/bloc/base_login_cubit.dart';
-import 'package:fluttertest01/tips/fish_redux_page.dart';
-import 'package:fluttertest01/tips/keepStateAlive.dart';
-import 'package:fluttertest01/tips/page_view.dart';
-import 'package:fluttertest01/tips/page_view_tabbar.dart';
-import 'package:fluttertest01/tips/redux_page.dart';
-import 'package:fluttertest01/tips/rx_dart/base_rxDart.dart';
-import 'package:fluttertest01/tips/scoped_page.dart';
-import 'package:fluttertest01/tips/wechat_view.dart';
+import 'mainUtil.dart';
 
 void main() {
   runApp(new MyApp());
@@ -150,6 +89,7 @@ class MyApp extends StatelessWidget {
         BaseKeyPage.routeName: (_) => BaseKeyPage(),
         BaseLayoutPage.routeName: (_) => BaseLayoutPage(),
         BaseDartPage.routeName: (_) => BaseDartPage(),
+        BaseRenderTree.routeName: (_) => BaseRenderTree()
       },
     );
   }
@@ -259,7 +199,7 @@ class MyHomeState extends State<MyHome> {
                 _child('使用Socket', '/BaseSocketRoute'),
                 _child('json 转model', '/BaseJsonToModelRoute'),
               ]),
-          _title('其他每周小部件与Tips', subTile: '状态保持、', list: [
+          _title('其他每周小部件与Tips', subTile: '状态保持、状态管理、详解key、同步与异步', list: [
             _child('保持页面数据不丢失', '/BaseKeepStateAlive'),
             _child('异步与多线程', '/BaseAsynAndISOlateRoute'),
             _child('异步与同步数据流', '/BaseAsync'),
@@ -272,9 +212,10 @@ class MyHomeState extends State<MyHome> {
             _child('状态管理(3)BLoC', BaseBLoCPageRoute.routeName),
             _child('状态管理(4)provider', BaseProviderRouteProvider.routeName),
             _child('阿里fish(5) redux', BaseFishReduxPage.routeName),
-            _child('key的妙用', BaseKeyPage.routeName),
-            _child('layoutBuilder', BaseLayoutPage.routeName),
+            _child('详解 key', BaseKeyPage.routeName),
+            _child('获取widget大小的layoutBuilder', BaseLayoutPage.routeName),
             _child('rxdart', BaseDartPage.routeName),
+            _child('渲染树', BaseRenderTree.routeName),
           ]),
         ],
       ),

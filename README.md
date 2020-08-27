@@ -71,22 +71,25 @@
   * [10.8 provider 用例 例子 局部刷新](lib/tips/provider/base_provider.dart)/[监听数字变化跳转页面类似登陆的跨页面操作](lib/tips/provider/base_provider_pan_zan.dart)
   * [10.9 BLoC 局部刷新/数字加减/登陆的多种写法(cubit/bloc)](lib/tips/base_bloc.dart)/[继承Cubit](lib/tips/bloc/base_login_cubit.dart)/[继承bloc](lib/tips/bloc/login_bloc/login_bloc_page.dart)
   * [10.10 详解 key](lib/tips/base_key.dart)
+  * [10.11 绘制原理 3棵树关系 例子](lib/tips/base_render_tree.dart)
   
   
   
 # Flutter 入门与进阶系列文章
   
-> [<<Dart 异步与多线程>>](https://juejin.im/post/6855129006103576584)
+> [Dart 异步与多线程](https://juejin.im/post/6855129006103576584)
 >
-> [<<Flutter 详解（一、深入了解状态管理--ScopeModel)>>](https://juejin.im/post/6860001014289416205)
+> [Flutter 详解（一、深入了解状态管理--ScopeModel)](https://juejin.im/post/6860001014289416205)
 >
-> [<<Flutter 详解 (二、深入了解状态管理--Redux)>>](https://juejin.im/post/6860747643493515278)
+> [Flutter 详解 (二、深入了解状态管理--Redux)](https://juejin.im/post/6860747643493515278)
 >
-> [<<Flutter 详解（三、深入了解状态管理--Provider)>>](https://juejin.im/post/6862150535043252237)
+> [Flutter 详解（三、深入了解状态管理--Provider)](https://juejin.im/post/6862150535043252237)
 >
-> [<<Flutter 详解（四、深入了解状态管理--BLoC)>>](https://juejin.im/post/6862932168729952264)
+> [Flutter 详解（四、深入了解状态管理--BLoC)](https://juejin.im/post/6862932168729952264)
 >
-> [<<Flutter 详解 (五、深入了解Key)>>](https://juejin.im/post/6863300824660082701)
+> [Flutter 详解 (五、深入了解Key)](https://juejin.im/post/6863300824660082701)
+>
+> [Flutter 详解（七、深入了解绘制原理）](https://juejin.im/post/6865554947941859335)
   
 
 
