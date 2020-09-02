@@ -3,6 +3,25 @@
 
 ![gif](img/demo.gif)
 
+# Flutter 入门与进阶系列文章
+  
+> [Dart 异步与多线程](https://juejin.im/post/6855129006103576584)
+>
+> [Flutter 详解（一、深入了解状态管理--ScopeModel](https://juejin.im/post/6860001014289416205)
+>
+> [Flutter 详解(二、深入了解状态管理--Redux)](https://juejin.im/post/6860747643493515278)
+>
+> [Flutter 详解（三、深入了解状态管理--Provider)](https://juejin.im/post/6862150535043252237)
+>
+> [Flutter 详解（四、深入了解状态管理--BLoC)](https://juejin.im/post/6862932168729952264)
+>
+> [Flutter 详解 (五、深入了解--Key)](https://juejin.im/post/6863300824660082701)
+>
+> [Flutter 详解 （六、深入了解--Stream](https://juejin.im/post/6864824541764550663)
+>
+> [Flutter 详解（七、深入了解绘制原理](https://juejin.im/post/6865554947941859335)
+>
+>[Flutter 详解（八、深入了解布局）](https://juejin.im/post/6867434802262982669/)
 
 ##  Flutter 各种小部件使用例子
 
@@ -75,21 +94,7 @@
   
   
   
-# Flutter 入门与进阶系列文章
-  
-> [Dart 异步与多线程](https://juejin.im/post/6855129006103576584)
->
-> [Flutter 详解（一、深入了解状态管理--ScopeModel)](https://juejin.im/post/6860001014289416205)
->
-> [Flutter 详解 (二、深入了解状态管理--Redux)](https://juejin.im/post/6860747643493515278)
->
-> [Flutter 详解（三、深入了解状态管理--Provider)](https://juejin.im/post/6862150535043252237)
->
-> [Flutter 详解（四、深入了解状态管理--BLoC)](https://juejin.im/post/6862932168729952264)
->
-> [Flutter 详解 (五、深入了解Key)](https://juejin.im/post/6863300824660082701)
->
-> [Flutter 详解（七、深入了解绘制原理）](https://juejin.im/post/6865554947941859335)
+
   
 
 
