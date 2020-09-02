@@ -233,6 +233,13 @@
             </list>
           </value>
         </entry>
+        <entry key="flutter_boost">
+          <value>
+            <list>
+              <option value="$USER_HOME$/flutterSDK/flutter1.17-stable/.pub-cache/git/flutter_boost-8692676a4982b3a6a1e30794f6bbf77d0c0feba4/lib" />
+            </list>
+          </value>
+        </entry>
         <entry key="flutter_easyhub">
           <value>
             <list>
@@ -733,6 +740,7 @@
       </option>
     </properties>
     <CLASSES>
+      <root url="file://$USER_HOME$/flutterSDK/flutter1.17-stable/.pub-cache/git/flutter_boost-8692676a4982b3a6a1e30794f6bbf77d0c0feba4/lib" />
       <root url="file://$USER_HOME$/flutterSDK/flutter1.17-stable/.pub-cache/hosted/pub.flutter-io.cn/_fe_analyzer_shared-6.0.0/lib" />
       <root url="file://$USER_HOME$/flutterSDK/flutter1.17-stable/.pub-cache/hosted/pub.flutter-io.cn/analyzer-0.39.15/lib" />
       <root url="file://$USER_HOME$/flutterSDK/flutter1.17-stable/.pub-cache/hosted/pub.flutter-io.cn/archive-2.0.13/lib" />

@@ -61,6 +61,7 @@ export 'package:fluttertest01/tips/rx_dart/base_rxDart.dart';
 export 'package:fluttertest01/tips/scoped_page.dart';
 export 'package:fluttertest01/tips/wechat_view.dart';
 export './tips/base_render_tree.dart';
+export './custom_animation/base_custom_animation.dart';
 
 ///
 /// Created by fgyong on 2020/8/26.

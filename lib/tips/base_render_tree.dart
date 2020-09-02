@@ -37,6 +37,7 @@ class _BaseRenderTreeState extends State<BaseRenderTree> {
 
   int _count = 0;
   Widget _body() {
+    print('build');
     return Center(
       child: Column(
         children: <Widget>[
@@ -51,10 +52,39 @@ class _BaseRenderTreeState extends State<BaseRenderTree> {
               ],
             ),
           ),
-          Text('$_count'),
+          Container(
+            child: Text('$_count'),
+          ),
+          const _LessRoute(),
         ],
       ),
     );
+  }
+
+  Widget _listView() {
+    return CustomScrollView(
+      slivers: <Widget>[
+        SliverList(
+          delegate: SliverChildBuilderDelegate((context, index) {
+            return Text('$index');
+          }, childCount: 10),
+        ),
+        SliverGrid(
+          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+            crossAxisCount: 3,
+            crossAxisSpacing: 10,
+            mainAxisSpacing: 10,
+          ),
+          delegate: SliverChildBuilderDelegate((context, index) {
+            return Text('$index');
+          }, childCount: 12),
+        )
+      ],
+    );
+  }
+
+  Widget _widget2() {
+    return Stack();
   }
 
   TextSpan _widgetBold(String string) {
@@ -70,4 +100,16 @@ class _BaseRenderTreeState extends State<BaseRenderTree> {
       text: '$string',
     );
   }
+}
+
+class _LessRoute extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    print('_LessRoute build');
+    return Container(
+      child: Text('const 修饰的组件，父组件怎么刷新，子组件都不刷新'),
+    );
+  }
+
+  const _LessRoute();
 }
