@@ -88,7 +88,7 @@
   * [10.6 ScopedModel 用例和原理 局部刷新](lib/tips/scoped_page.dart)
   * [10.7 redux用例和原理 局部刷新](lib/tips/redux_page.dart)
   * [10.8 provider 用例 例子 局部刷新](lib/tips/provider/base_provider.dart)/[监听数字变化跳转页面类似登陆的跨页面操作](lib/tips/provider/base_provider_pan_zan.dart)
-  * [10.9 BLoC 局部刷新/数字加减/登陆的多种写法(cubit/bloc)](lib/tips/base_bloc.dart)/[继承Cubit](lib/tips/bloc/base_login_cubit.dart)/[继承bloc](lib/tips/bloc/login_bloc/login_bloc_page.dart)
+  * [10.9 BLoC 局部刷新/数字加减/登陆的多种写法(cubit/bloc)](lib/tips/base_bloc.dart)/[继承Cubit](lib/tips/bloc/base_login_cubit.dart)/[继承bloc](lib/tips/bloc/login_bloc/login_bloc_page.dart)/[bloc list page](lib/tips/bloc/list_cubit/bloc/list_bloc.dart)
   * [10.10 详解 key](lib/tips/base_key.dart)
   * [10.11 绘制原理 3棵树关系 例子](lib/tips/base_render_tree.dart)
   
