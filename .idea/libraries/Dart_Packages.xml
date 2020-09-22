@@ -40,7 +40,7 @@
         <entry key="bloc">
           <value>
             <list>
-              <option value="$USER_HOME$/flutterSDK/flutter1.20/.pub-cache/hosted/pub.flutter-io.cn/bloc-6.0.2/lib" />
+              <option value="$USER_HOME$/flutterSDK/flutter1.20/.pub-cache/hosted/pub.flutter-io.cn/bloc-6.0.3/lib" />
             </list>
           </value>
         </entry>
@@ -243,7 +243,7 @@
         <entry key="flutter_bloc">
           <value>
             <list>
-              <option value="$USER_HOME$/flutterSDK/flutter1.20/.pub-cache/hosted/pub.flutter-io.cn/flutter_bloc-6.0.4/lib" />
+              <option value="$USER_HOME$/flutterSDK/flutter1.20/.pub-cache/hosted/pub.flutter-io.cn/flutter_bloc-6.0.5/lib" />
             </list>
           </value>
         </entry>
@@ -321,6 +321,13 @@
           <value>
             <list>
               <option value="$USER_HOME$/flutterSDK/flutter1.20/.pub-cache/hosted/pub.flutter-io.cn/html-0.14.0+3/lib" />
+            </list>
+          </value>
+        </entry>
+        <entry key="http">
+          <value>
+            <list>
+              <option value="$USER_HOME$/flutterSDK/flutter1.20/.pub-cache/hosted/pub.flutter-io.cn/http-0.12.2/lib" />
             </list>
           </value>
         </entry>
@@ -746,7 +753,7 @@
       <root url="file://$USER_HOME$/flutterSDK/flutter1.20/.pub-cache/hosted/pub.flutter-io.cn/args-1.6.0/lib" />
       <root url="file://$USER_HOME$/flutterSDK/flutter1.20/.pub-cache/hosted/pub.flutter-io.cn/async-2.4.2/lib" />
       <root url="file://$USER_HOME$/flutterSDK/flutter1.20/.pub-cache/hosted/pub.flutter-io.cn/audioplayer-0.8.1/lib" />
-      <root url="file://$USER_HOME$/flutterSDK/flutter1.20/.pub-cache/hosted/pub.flutter-io.cn/bloc-6.0.2/lib" />
+      <root url="file://$USER_HOME$/flutterSDK/flutter1.20/.pub-cache/hosted/pub.flutter-io.cn/bloc-6.0.3/lib" />
       <root url="file://$USER_HOME$/flutterSDK/flutter1.20/.pub-cache/hosted/pub.flutter-io.cn/boolean_selector-2.0.0/lib" />
       <root url="file://$USER_HOME$/flutterSDK/flutter1.20/.pub-cache/hosted/pub.flutter-io.cn/build-1.3.0/lib" />
       <root url="file://$USER_HOME$/flutterSDK/flutter1.20/.pub-cache/hosted/pub.flutter-io.cn/build_config-0.4.2/lib" />
@@ -774,7 +781,7 @@
       <root url="file://$USER_HOME$/flutterSDK/flutter1.20/.pub-cache/hosted/pub.flutter-io.cn/file-5.2.1/lib" />
       <root url="file://$USER_HOME$/flutterSDK/flutter1.20/.pub-cache/hosted/pub.flutter-io.cn/fish_redux-0.3.4/lib" />
       <root url="file://$USER_HOME$/flutterSDK/flutter1.20/.pub-cache/hosted/pub.flutter-io.cn/fixnum-0.10.11/lib" />
-      <root url="file://$USER_HOME$/flutterSDK/flutter1.20/.pub-cache/hosted/pub.flutter-io.cn/flutter_bloc-6.0.4/lib" />
+      <root url="file://$USER_HOME$/flutterSDK/flutter1.20/.pub-cache/hosted/pub.flutter-io.cn/flutter_bloc-6.0.5/lib" />
       <root url="file://$USER_HOME$/flutterSDK/flutter1.20/.pub-cache/hosted/pub.flutter-io.cn/flutter_easyhub-1.0.1+0.10/lib" />
       <root url="file://$USER_HOME$/flutterSDK/flutter1.20/.pub-cache/hosted/pub.flutter-io.cn/flutter_easyloading-1.1.4/lib" />
       <root url="file://$USER_HOME$/flutterSDK/flutter1.20/.pub-cache/hosted/pub.flutter-io.cn/flutter_redux-0.6.0/lib" />
@@ -783,6 +790,7 @@
       <root url="file://$USER_HOME$/flutterSDK/flutter1.20/.pub-cache/hosted/pub.flutter-io.cn/glob-1.2.0/lib" />
       <root url="file://$USER_HOME$/flutterSDK/flutter1.20/.pub-cache/hosted/pub.flutter-io.cn/graphs-0.2.0/lib" />
       <root url="file://$USER_HOME$/flutterSDK/flutter1.20/.pub-cache/hosted/pub.flutter-io.cn/html-0.14.0+3/lib" />
+      <root url="file://$USER_HOME$/flutterSDK/flutter1.20/.pub-cache/hosted/pub.flutter-io.cn/http-0.12.2/lib" />
       <root url="file://$USER_HOME$/flutterSDK/flutter1.20/.pub-cache/hosted/pub.flutter-io.cn/http_multi_server-2.2.0/lib" />
       <root url="file://$USER_HOME$/flutterSDK/flutter1.20/.pub-cache/hosted/pub.flutter-io.cn/http_parser-3.1.4/lib" />
       <root url="file://$USER_HOME$/flutterSDK/flutter1.20/.pub-cache/hosted/pub.flutter-io.cn/intl-0.16.1/lib" />

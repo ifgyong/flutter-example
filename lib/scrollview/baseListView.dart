@@ -23,7 +23,7 @@ class _BaseListViewState extends State<BaseListView> {
 
   Widget _body() {
     List<Widget> list = new List();
-    for (int i = 0; i < 30; i++) {
+    for (int i = 0; i < 5; i++) {
       list.add(Card(
         child: Container(
           height: 40,
@@ -34,7 +34,7 @@ class _BaseListViewState extends State<BaseListView> {
       ));
     }
     return ListView(
-      itemExtent: 80,
+      itemExtent: 5,
       shrinkWrap: false,
       addAutomaticKeepAlives: true,
       children: list,
@@ -90,7 +90,7 @@ class _BaseListViewState extends State<BaseListView> {
           title: list[index],
         ),
       );
-    } else if (list.length >= 30) {
+    } else if (list.length >= 5) {
       return Container(
         alignment: Alignment.center,
         height: 80,
@@ -128,7 +128,7 @@ class _BaseListViewState extends State<BaseListView> {
 
   void _getMoreData() async {
     await Future.delayed(Duration(milliseconds: 2000));
-    for (int i = 0; i < 10; i++) {
+    for (int i = 0; i < 5; i++) {
       list.add(DateTime.now().toString());
     }
     setState(() {});

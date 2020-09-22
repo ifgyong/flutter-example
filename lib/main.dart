@@ -92,7 +92,9 @@ class MyApp extends StatelessWidget {
         BaseRenderTree.routeName: (_) => BaseRenderTree(),
         BaseCustomListAnimationPage.routeName: (_) =>
             BaseCustomListAnimationPage(),
-        BaseImagePage.routeName: (_) => BaseImagePage()
+        BaseImagePage.routeName: (_) => BaseImagePage(),
+        BaseChannelRoute.routeName: (_) => BaseChannelRoute(),
+        BaseTouchHandlePage.routenName: (_) => BaseTouchHandlePage()
       },
     );
   }
@@ -220,6 +222,8 @@ class MyHomeState extends State<MyHome> {
             _child('rxdart', BaseDartPage.routeName),
             _child('渲染树', BaseRenderTree.routeName),
             _child('图片加载', BaseImagePage.routeName),
+            _child('通道', BaseChannelRoute.routeName),
+            _child('触摸分发流程', BaseTouchHandlePage.routenName),
           ]),
           _title('自定义的动画组件', list: [
             _child('page controller', BaseCustomListAnimationPage.routeName)

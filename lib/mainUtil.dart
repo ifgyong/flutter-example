@@ -63,6 +63,8 @@ export 'package:fluttertest01/tips/wechat_view.dart';
 export './tips/base_render_tree.dart';
 export './custom_animation/base_custom_animation.dart';
 export './tips/img/base_img.dart';
+export './tips/channel/base_channel.dart';
+export './tips/touch/base_touch_handle.dart';
 
 ///
 /// Created by fgyong on 2020/8/26.

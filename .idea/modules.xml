@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/flutter-example-git.iml" filepath="$PROJECT_DIR$/.idea/flutter-example-git.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/flutter_example_git.iml" filepath="$PROJECT_DIR$/.idea/flutter_example_git.iml" />
     </modules>
   </component>
 </project>

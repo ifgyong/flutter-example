@@ -4,6 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:fluttertest01/baseWidget/baseState.dart';
 import 'package:fluttertest01/test.dart';
 import 'package:equatable/equatable.dart';
+import 'package:fluttertest01/tips/bloc/list_cubit/page/list_bloc_route.dart';
 import 'package:fluttertest01/tips/bloc/login_bloc/login_bloc_page.dart';
 import '../tips/bloc/base_login_cubit.dart';
 
@@ -54,6 +55,14 @@ class _BaseBLoCPageRouteState extends State<BaseBLoCPageRoute> {
             child: Text('login BLoC'),
             onPressed: () {
               push(LoginBlocRoute());
+            },
+          ),
+        ),
+        SliverToBoxAdapter(
+          child: OutlineButton(
+            child: Text('posts BLoC'),
+            onPressed: () {
+              push(ListBlocRoute());
             },
           ),
         )

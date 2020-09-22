@@ -29,7 +29,7 @@ class _BaseImagePageState extends State<BaseImagePage> {
     print('${widget.width} ${widget.height}');
     print('${widget.toString()}');
     return Center(
-      child: Image.assfet('img/2.png'),
+      child: Image.asset('img/2.png'),
     );
   }
 }

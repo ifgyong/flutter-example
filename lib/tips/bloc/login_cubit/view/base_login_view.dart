@@ -63,7 +63,9 @@ class TextFiledPasswordRoute extends StatelessWidget {
         builder: (BuildContext context, LoginModel state) {
           return TextField(
             onChanged: (v) {
-              context.bloc<LoginCubit>().changePassword(pwd: v);
+              context
+                  .bloc<LoginCubit>()
+                  .handleLoginEvents(LoginCubitChagnePassword(password: v));
             },
             textAlign: TextAlign.center,
             decoration: InputDecoration(
@@ -83,7 +85,9 @@ class TextFiledNameRoute extends StatelessWidget {
         builder: (BuildContext context, LoginModel state) {
           return TextField(
             onChanged: (v) {
-              context.bloc<LoginCubit>().changeName(name: v);
+              context
+                  .bloc<LoginCubit>()
+                  .handleLoginEvents(LoginCubitChagneName(name: v));
             },
             textAlign: TextAlign.center,
             decoration: InputDecoration(
@@ -108,7 +112,9 @@ class LoginButton extends StatelessWidget {
                 child: const Text('login'),
                 onPressed: state.btnVisiable
                     ? () {
-                        context.bloc<LoginCubit>().login();
+                        context
+                            .bloc<LoginCubit>()
+                            .handleLoginEvents(LoginCubitSubmitted());
                       }
                     : null,
               );

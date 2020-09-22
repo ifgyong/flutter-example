@@ -37,12 +37,12 @@ packages:
     source: hosted
     version: "0.8.1"
   bloc:
-    dependency: "direct dev"
+    dependency: "direct main"
     description:
       name: bloc
       url: "https://pub.flutter-io.cn"
     source: hosted
-    version: "6.0.2"
+    version: "6.0.3"
   boolean_selector:
     dependency: transitive
     description:
@@ -243,7 +243,7 @@ packages:
       name: flutter_bloc
       url: "https://pub.flutter-io.cn"
     source: hosted
-    version: "6.0.4"
+    version: "6.0.5"
   flutter_boost:
     dependency: "direct main"
     description:
@@ -319,6 +319,13 @@ packages:
       url: "https://pub.flutter-io.cn"
     source: hosted
     version: "0.14.0+3"
+  http:
+    dependency: "direct main"
+    description:
+      name: http
+      url: "https://pub.flutter-io.cn"
+    source: hosted
+    version: "0.12.2"
   http_multi_server:
     dependency: transitive
     description:
