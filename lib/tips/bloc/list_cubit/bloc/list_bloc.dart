@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:fluttertest01/tips/bloc/list_cubit/list_events/list_event.dart';
 import 'package:fluttertest01/tips/bloc/list_cubit/list_status/list_state.dart';
@@ -17,7 +19,7 @@ class PostBloc extends Bloc<PostEvent, PostState> {
     final currentState = state;
     print('$event');
     try {
-      if (event is PostFetchedEvent && _hasReachdMax(state) == false) {
+      if (event is PostFetchedEvent && _hasReachMax(state) == false) {
         if (currentState is PostInitial) {
           final posts = await _fetchPosts(0, 20);
           yield PostSuccess(posts: posts, hasReachedMax: false);
@@ -39,7 +41,7 @@ class PostBloc extends Bloc<PostEvent, PostState> {
   }
 
   /// 是否有最大值
-  bool _hasReachdMax(PostState state) {
+  bool _hasReachMax(PostState state) {
     return state is PostSuccess && (state).hasReachedMax == true;
   }
 

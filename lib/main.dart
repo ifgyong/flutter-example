@@ -1,9 +1,17 @@
+import 'dart:async';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:fluttertest01/tips/hive/base_hive.dart';
+import 'package:hive/hive.dart';
+import 'package:path_provider/path_provider.dart';
 import 'mainUtil.dart';
 
-void main() {
-  runApp(new MyApp());
+void main() async {
+  runZonedGuarded(() => runApp(new MyApp()), (Object error, StackTrace stack) {
+    print('${error.toString()} stack:${stack.toString()}');
+  });
+  await Hive.init('${getTemporaryDirectory()}');
 }
 
 class MyApp extends StatelessWidget {
@@ -94,7 +102,8 @@ class MyApp extends StatelessWidget {
             BaseCustomListAnimationPage(),
         BaseImagePage.routeName: (_) => BaseImagePage(),
         BaseChannelRoute.routeName: (_) => BaseChannelRoute(),
-        BaseTouchHandlePage.routenName: (_) => BaseTouchHandlePage()
+        BaseTouchHandlePage.routenName: (_) => BaseTouchHandlePage(),
+        BaseHive.routeName: (_) => BaseHive(),
       },
     );
   }
@@ -224,6 +233,7 @@ class MyHomeState extends State<MyHome> {
             _child('图片加载', BaseImagePage.routeName),
             _child('通道', BaseChannelRoute.routeName),
             _child('触摸分发流程', BaseTouchHandlePage.routenName),
+            _child('hive 数据存储', BaseHive.routeName),
           ]),
           _title('自定义的动画组件', list: [
             _child('page controller', BaseCustomListAnimationPage.routeName)
