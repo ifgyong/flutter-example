@@ -303,6 +303,13 @@
             </list>
           </value>
         </entry>
+        <entry key="get">
+          <value>
+            <list>
+              <option value="$USER_HOME$/.fvm/versions/1.20.0-stable/.pub-cache/hosted/pub.flutter-io.cn/get-3.13.2/lib" />
+            </list>
+          </value>
+        </entry>
         <entry key="glob">
           <value>
             <list>
@@ -801,6 +808,7 @@
       <root url="file://$USER_HOME$/.fvm/versions/1.20.0-stable/.pub-cache/hosted/pub.flutter-io.cn/flutter_redux-0.6.0/lib" />
       <root url="file://$USER_HOME$/.fvm/versions/1.20.0-stable/.pub-cache/hosted/pub.flutter-io.cn/flutter_simple_record_and_player-1.0.0+0.4/lib" />
       <root url="file://$USER_HOME$/.fvm/versions/1.20.0-stable/.pub-cache/hosted/pub.flutter-io.cn/flutter_spinkit-4.1.2+1/lib" />
+      <root url="file://$USER_HOME$/.fvm/versions/1.20.0-stable/.pub-cache/hosted/pub.flutter-io.cn/get-3.13.2/lib" />
       <root url="file://$USER_HOME$/.fvm/versions/1.20.0-stable/.pub-cache/hosted/pub.flutter-io.cn/glob-1.2.0/lib" />
       <root url="file://$USER_HOME$/.fvm/versions/1.20.0-stable/.pub-cache/hosted/pub.flutter-io.cn/graphs-0.2.0/lib" />
       <root url="file://$USER_HOME$/.fvm/versions/1.20.0-stable/.pub-cache/hosted/pub.flutter-io.cn/hive-1.4.4+1/lib" />

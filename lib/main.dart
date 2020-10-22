@@ -2,22 +2,26 @@ import 'dart:async';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:fluttertest01/tips/get/get_example.dart';
 import 'package:fluttertest01/tips/hive/base_hive.dart';
+import 'package:get/get.dart';
+import 'package:get/utils.dart';
 import 'package:hive/hive.dart';
 import 'package:path_provider/path_provider.dart';
 import 'mainUtil.dart';
 
 void main() async {
-  runZonedGuarded(() => runApp(new MyApp()), (Object error, StackTrace stack) {
-    print('${error.toString()} stack:${stack.toString()}');
-  });
-  await Hive.init('${getTemporaryDirectory()}');
+  runApp(new MyApp());
+  // runZonedGuarded(() => runApp(new MyApp()), (Object error, StackTrace stack) {
+  //   print('${error.toString()} stack:${stack.toString()}');
+  // });
+  // await Hive.init('${getTemporaryDirectory()}');
 }
 
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return GetMaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
           primarySwatch: Colors.blue,
@@ -33,6 +37,10 @@ class MyApp extends StatelessWidget {
       home: MyHome(
         title: 'Flutter Demo Home Page',
       ),
+      initialRoute: '/',
+      getPages: [
+        GetPage(name: '/', page: () => MyHome()),
+      ],
       routes: {
         '/text': (ctx) => BaseWidgetTextPage(),
         '/btn': (ctx) => BaseButtons(),
@@ -104,6 +112,7 @@ class MyApp extends StatelessWidget {
         BaseChannelRoute.routeName: (_) => BaseChannelRoute(),
         BaseTouchHandlePage.routenName: (_) => BaseTouchHandlePage(),
         BaseHive.routeName: (_) => BaseHive(),
+        BaseGetPage.routeName: (_) => BaseGetPage()
       },
     );
   }
@@ -234,6 +243,7 @@ class MyHomeState extends State<MyHome> {
             _child('通道', BaseChannelRoute.routeName),
             _child('触摸分发流程', BaseTouchHandlePage.routenName),
             _child('hive 数据存储', BaseHive.routeName),
+            _child('get demo', BaseGetPage.routeName),
           ]),
           _title('自定义的动画组件', list: [
             _child('page controller', BaseCustomListAnimationPage.routeName)
@@ -308,7 +318,8 @@ class MyHomeState extends State<MyHome> {
               alignment: Alignment.centerLeft,
             ),
             onPressed: () {
-              Navigator.pushNamed(this.context, route);
+              // Navigator.pushNamed(this.context, route);
+              Get.toNamed(route);
             },
           ),
         ),
