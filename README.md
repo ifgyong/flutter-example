@@ -91,6 +91,7 @@
   * [10.9 BLoC 局部刷新/数字加减/登陆的多种写法(cubit/bloc)](lib/tips/base_bloc.dart)/[继承Cubit](lib/tips/bloc/base_login_cubit.dart)/[继承bloc](lib/tips/bloc/login_bloc/login_bloc_page.dart)/[bloc list page](lib/tips/bloc/list_cubit/bloc/list_bloc.dart)
   * [10.10 详解 key](lib/tips/base_key.dart)
   * [10.11 绘制原理 3棵树关系 例子](lib/tips/base_render_tree.dart)
+  * [10.12  页面过度动画例子](lib/animation/base_pageRoute.dart)
   
   
   

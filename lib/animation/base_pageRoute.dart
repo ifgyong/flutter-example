@@ -83,11 +83,18 @@ class _BasePageRouteState extends State<BasePageRoute> {
             transitionDuration: Duration(milliseconds: 300),
             pageBuilder: (BuildContext context, Animation<double> a1,
                 Animation<double> a2) {
-              return new ScaleTransition(
-                scale: a1,
-                child: PageB(),
-              );
-            }));
+              return PageB();
+            },
+            transitionsBuilder: _transitionsBuilder));
+  }
+
+  /// 过度动画处理函数
+  Widget _transitionsBuilder(BuildContext context, Animation<double> animation,
+      Animation<double> secondaryAnimation, Widget child) {
+    return new ScaleTransition(
+      scale: animation,
+      child: child,
+    );
   }
 
   void _push3() {
