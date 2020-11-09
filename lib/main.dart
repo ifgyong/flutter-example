@@ -2,6 +2,8 @@ import 'dart:async';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:fluttertest01/tips/base_interactive_viewer.dart';
+import 'package:fluttertest01/tips/base_qrcode.dart';
 import 'package:fluttertest01/tips/get/get_example.dart';
 import 'package:fluttertest01/tips/hive/base_hive.dart';
 import 'package:get/get.dart';
@@ -112,7 +114,9 @@ class MyApp extends StatelessWidget {
         BaseChannelRoute.routeName: (_) => BaseChannelRoute(),
         BaseTouchHandlePage.routenName: (_) => BaseTouchHandlePage(),
         BaseHive.routeName: (_) => BaseHive(),
-        BaseGetPage.routeName: (_) => BaseGetPage()
+        BaseGetPage.routeName: (_) => BaseGetPage(),
+        BaseQRCodePage.routeName: (_) => BaseQRCodePage(),
+        BaseInteractiveViewer.routeName: (_) => BaseInteractiveViewer(),
       },
     );
   }
@@ -244,6 +248,8 @@ class MyHomeState extends State<MyHome> {
             _child('触摸分发流程', BaseTouchHandlePage.routenName),
             _child('hive 数据存储', BaseHive.routeName),
             _child('get demo', BaseGetPage.routeName),
+            _child("扫描二维码", BaseQRCodePage.routeName),
+            _child("放大缩小组件", BaseInteractiveViewer.routeName),
           ]),
           _title('自定义的动画组件', list: [
             _child('page controller', BaseCustomListAnimationPage.routeName)

@@ -45,6 +45,12 @@
       <excludeFolder url="file://$MODULE_DIR$/ios/.symlinks/plugins/permission_handler/example/.dart_tool" />
       <excludeFolder url="file://$MODULE_DIR$/ios/.symlinks/plugins/permission_handler/example/.pub" />
       <excludeFolder url="file://$MODULE_DIR$/ios/.symlinks/plugins/permission_handler/example/build" />
+      <excludeFolder url="file://$MODULE_DIR$/ios/.symlinks/plugins/qr_code_scanner/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/ios/.symlinks/plugins/qr_code_scanner/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/ios/.symlinks/plugins/qr_code_scanner/build" />
+      <excludeFolder url="file://$MODULE_DIR$/ios/.symlinks/plugins/qr_code_scanner/example/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/ios/.symlinks/plugins/qr_code_scanner/example/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/ios/.symlinks/plugins/qr_code_scanner/example/build" />
       <excludeFolder url="file://$MODULE_DIR$/ios/.symlinks/plugins/record_mp3/.dart_tool" />
       <excludeFolder url="file://$MODULE_DIR$/ios/.symlinks/plugins/record_mp3/.pub" />
       <excludeFolder url="file://$MODULE_DIR$/ios/.symlinks/plugins/record_mp3/build" />
