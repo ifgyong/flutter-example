@@ -34,6 +34,9 @@ dependencies:
   dio: ^3.0.9
   flutter_easyhub: ^1.0.1+0.10
   get: ^3.13.2
+  get_storage: ^1.3.0
+
+  fluttertoast: ^7.1.6
 
   flutter_simple_record_and_player: ^1.0.0
   json_annotation: ^3.0.0

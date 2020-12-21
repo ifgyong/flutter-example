@@ -1,5 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:fluttertest01/tips/get/get_list_page.dart';
+import 'package:fluttertest01/tips/get/get_login_page.dart';
+import 'package:fluttertest01/tips/get/get_route.dart';
+import 'package:fluttertest01/tips/get/get_store.dart';
 import 'package:get/get.dart';
 
 ///
@@ -21,12 +25,17 @@ class _BaseGetPageState extends State<BaseGetPage> {
       appBar: AppBar(
         title: Text('get'),
       ),
-      body: _body(),
+      body: Container(
+        alignment: Alignment.center,
+        child: _body(),
+      ),
     );
   }
 
   Widget _body() {
     return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         OutlineButton(
           child: Text('get 数字加减'),
@@ -76,10 +85,7 @@ class _BaseGetPageState extends State<BaseGetPage> {
             Get.bottomSheet(Container(
               child: Wrap(
                 children: <Widget>[
-                  ListTile(
-                      leading: Icon(Icons.music_note),
-                      title: Text('Music'),
-                      onTap: () => {}),
+                  ListTile(leading: Icon(Icons.music_note), title: Text('Music'), onTap: () => {}),
                   ListTile(
                     leading: Icon(Icons.videocam),
                     title: Text('Video'),
@@ -90,22 +96,47 @@ class _BaseGetPageState extends State<BaseGetPage> {
             ));
           },
         ),
-        OutlineButton(
-          child: Text('加减'),
-          onPressed: () {
-            c.increment();
-          },
-        ),
         Obx(() => Text(c.count.toString())),
+
+        _gotoList(),
+        _login(), _route(), _store()
         // ObxValue((var value) => Text('${value.toString()}'), c),
       ],
     );
   }
 
+  Widget _gotoList() => OutlineButton(
+        child: Text('goto list 列表展示'),
+        onPressed: () {
+          Get.toNamed(GetListPageRoute.routeName);
+        },
+      );
+
+  Widget _login() => OutlineButton(
+        child: Text('get 登陆 全过程'),
+        onPressed: () {
+          Get.to(GetLoginPage());
+        },
+      );
+
+  Widget _route() => OutlineButton(
+        child: Text('get 路由切换'),
+        onPressed: () {
+          Get.to(GetRoute());
+        },
+      );
+
+  Widget _store() => OutlineButton(
+        child: Text('get 存储'),
+        onPressed: () {
+          Get.to(GetStoreRoute());
+        },
+      );
+
   void _pushNumber() {
-    // Get.to()
-    // ;
+    c.increment();
   }
+
   @override
   void initState() {
     super.initState();
@@ -114,6 +145,7 @@ class _BaseGetPageState extends State<BaseGetPage> {
   @override
   void dispose() {
     Get.delete<Controller>();
+    Get.reset(clearFactory: true);
     super.dispose();
   }
 
@@ -123,4 +155,9 @@ class _BaseGetPageState extends State<BaseGetPage> {
 class Controller extends GetxController {
   var count = 0.obs;
   increment() => count++;
+  @override
+  void onClose() {
+    printInfo(info: 'Controller close');
+    super.onClose();
+  }
 }
