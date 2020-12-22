@@ -1,15 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-//
-// class GetListPage extends StatelessWidget {
-//   @override
-//   Widget build(BuildContext context) {
-//     final Controller c = Get.put<GetListController>(GetListController());
-//
-//     return GetListPageRoute();
-//   }
-// }
 
 class GetListController extends GetxController {
   var data = List<String>().obs;

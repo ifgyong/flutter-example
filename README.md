@@ -92,6 +92,8 @@
   * [10.10 详解 key](lib/tips/base_key.dart)
   * [10.11 绘制原理 3棵树关系 例子](lib/tips/base_render_tree.dart)
   * [10.12  页面过度动画例子](lib/animation/base_pageRoute.dart)
+  * 10.13  [Getx的使用例子](lib/tips/get/get_example.dart)包含[登陆](lib/tips/get/get_login_page.dart)、[列表](lib/tips/get/get_list_page.dart)、[读写数据](lib/tips/get/get_store.dart)，[数字加减局部刷新](lib/tips/get/get_example.dart)
+
   
   
   
