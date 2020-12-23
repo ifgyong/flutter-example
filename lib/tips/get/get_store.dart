@@ -25,11 +25,19 @@ class _GetStoreState extends State<GetStoreRoute> {
       child: Column(
         children: [
           Text('GetStorage 添加和读取 ：'),
-          TextField(
-            controller: c.editK,
+          Padding(
+            child: TextField(
+              controller: c.editK,
+              decoration: InputDecoration(hintText: 'key', labelText: 'key'),
+            ),
+            padding: EdgeInsets.all(20),
           ),
-          TextField(
-            controller: c.editC,
+          Padding(
+            child: TextField(
+              controller: c.editC,
+              decoration: InputDecoration(hintText: 'value', labelText: 'value'),
+            ),
+            padding: EdgeInsets.all(20),
           ),
           Row(
             children: [
@@ -47,6 +55,9 @@ class _GetStoreState extends State<GetStoreRoute> {
               ),
             ],
             mainAxisAlignment: MainAxisAlignment.spaceAround,
+          ),
+          SizedBox(
+            height: 10,
           ),
           Text('添加操作日志：'),
           ObxValue((v) {
@@ -103,7 +114,6 @@ class GetStoreController extends GetxController {
 
     /// 监听固定的 key
     box.listenKey('key', (v) {
-      // print('key:$v');
       log.value = log.value + 'key->$v \n';
     });
 
@@ -115,9 +125,16 @@ class GetStoreController extends GetxController {
       var value = '';
 
       box.getKeys<Iterable<String>>().forEach((element) {
-        value += value + 'key:$element' + "value:" + boxObx.read(element).toString() + '\n';
+        var currentKeyAndValue = 'key:$element' +
+            "  value:" +
+            boxObx.read(element).toString() +
+            ''
+                '\n';
+        value += value + currentKeyAndValue;
+        printInfo(info: currentKeyAndValue);
       });
       keyAndValue.value = value;
+
       log.value = log.value + '$changeStr \n';
     });
     super.onInit();

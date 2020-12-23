@@ -41,19 +41,25 @@ class _GetLoginPageState extends State<GetLoginPage> {
           SizedBox(
             height: 100,
           ),
-          TextField(
-            controller: c.editMobile,
-            onChanged: (v) {
-              c.changePwd();
-            },
-            decoration: InputDecoration(hintText: '账号', labelText: '账号'),
+          Padding(
+            child: TextField(
+              controller: c.editMobile,
+              onChanged: (v) {
+                c.changePwd();
+              },
+              decoration: InputDecoration(hintText: '账号', labelText: '账号'),
+            ),
+            padding: EdgeInsets.only(left: 20, right: 20, top: 10, bottom: 10),
           ),
-          TextField(
-            controller: c.editPwd,
-            onChanged: (v) {
-              c.changePwd();
-            },
-            decoration: InputDecoration(hintText: '密码', hintMaxLines: 1, labelText: '密码'),
+          Padding(
+            child: TextField(
+              controller: c.editPwd,
+              onChanged: (v) {
+                c.changePwd();
+              },
+              decoration: InputDecoration(hintText: '密码', hintMaxLines: 1, labelText: '密码'),
+            ),
+            padding: EdgeInsets.only(left: 20, right: 20, top: 10, bottom: 10),
           ),
           SizedBox(
             height: 40,
@@ -109,6 +115,13 @@ class _GetLoginPageState extends State<GetLoginPage> {
   void dispose() {
     Get.delete<GetLoginController>();
     super.dispose();
+  }
+}
+
+class GetLoginBind extends Bindings {
+  @override
+  void dependencies() {
+    Get.lazyPut(() => GetLoginController());
   }
 }
 

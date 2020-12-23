@@ -4,6 +4,7 @@ import 'package:fluttertest01/tips/base_interactive_viewer.dart';
 import 'package:fluttertest01/tips/base_qrcode.dart';
 import 'package:fluttertest01/tips/get/get_example.dart';
 import 'package:fluttertest01/tips/get/get_list_page.dart';
+import 'package:fluttertest01/tips/get/get_login_page.dart';
 import 'package:fluttertest01/tips/hive/base_hive.dart';
 import 'package:get/get.dart';
 import 'package:get/utils.dart';
@@ -36,6 +37,7 @@ class MyApp extends StatelessWidget {
       initialRoute: '/',
       getPages: [
         GetPage(name: '/', page: () => MyHome()),
+        GetPage(name: GetLoginPage.routeName, page: () => GetLoginPage(), binding: GetLoginBind())
       ],
       routes: {
         '/text': (ctx) => BaseWidgetTextPage(),

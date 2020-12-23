@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:fluttertest01/tips/get/get_increment_page.dart';
 import 'package:fluttertest01/tips/get/get_list_page.dart';
 import 'package:fluttertest01/tips/get/get_login_page.dart';
 import 'package:fluttertest01/tips/get/get_route.dart';
@@ -41,6 +42,7 @@ class _BaseGetPageState extends State<BaseGetPage> {
           child: Text('get 数字加减'),
           onPressed: _pushNumber,
         ),
+
         OutlineButton(
           child: Text('show SnackBar top'),
           onPressed: () {
@@ -96,7 +98,6 @@ class _BaseGetPageState extends State<BaseGetPage> {
             ));
           },
         ),
-        Obx(() => Text(c.count.toString())),
 
         _gotoList(),
         _login(), _route(), _store()
@@ -115,7 +116,7 @@ class _BaseGetPageState extends State<BaseGetPage> {
   Widget _login() => OutlineButton(
         child: Text('get 登陆 全过程'),
         onPressed: () {
-          Get.to(GetLoginPage());
+          Get.toNamed(GetLoginPage.routeName);
         },
       );
 
@@ -134,7 +135,7 @@ class _BaseGetPageState extends State<BaseGetPage> {
       );
 
   void _pushNumber() {
-    c.increment();
+    Get.to(GetIncrementPage());
   }
 
   @override
@@ -154,10 +155,19 @@ class _BaseGetPageState extends State<BaseGetPage> {
 
 class Controller extends GetxController {
   var count = 0.obs;
+  var count2 = 0.obs;
+
+  final log = ''.obs;
+  final log2 = ''.obs;
+
   increment() => count++;
   @override
   void onClose() {
     printInfo(info: 'Controller close');
     super.onClose();
+  }
+
+  void change() {
+    log.value += ' ${log.value.length}';
   }
 }

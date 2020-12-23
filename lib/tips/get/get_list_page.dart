@@ -94,7 +94,17 @@ class GetListPageRouteState extends State<GetListPageRoute> {
                   onPressed: () {
                     c.add();
                   },
-                  child: Obx(() => Text('+ ${c.count} ${c.isLoadingMore.value}')),
+                  child: ObxValue((v) {
+                    printInfo(info: '刷新了页面 $v');
+                    return Text(' 正在加载：${v.value}');
+                  }, c.isLoadingMore),
+                ),
+                SizedBox(
+                  width: 60,
+                  child: Obx(() {
+                    printInfo(info: '数组长度刷新');
+                    return Text('${c.data.length}');
+                  }),
                 )
               ],
             ),
@@ -106,7 +116,7 @@ class GetListPageRouteState extends State<GetListPageRoute> {
 
   Widget _cellBuild(BuildContext context, int index) {
     if (c.data.length == index) {
-      printInfo(info: 'c.loading ${c.isLoadingMore}');
+      printInfo(info: 'cellbuild 动画: c.loading ${c.isLoadingMore}');
       return SizedBox(
         height: 50,
         child: Center(
@@ -140,5 +150,11 @@ class GetListPageRouteState extends State<GetListPageRoute> {
     /// 下次进来 需要重新请求数据
     Get.delete<GetListController>();
     super.dispose();
+  }
+
+  @override
+  void initState() {
+    printInfo(info: 'get_list_page_state initState');
+    super.initState();
   }
 }
