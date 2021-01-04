@@ -6,13 +6,17 @@ import 'package:fluttertest01/tips/get/get_example.dart';
 import 'package:fluttertest01/tips/get/get_list_page.dart';
 import 'package:fluttertest01/tips/get/get_login_page.dart';
 import 'package:fluttertest01/tips/hive/base_hive.dart';
+import 'package:fluttertest01/tips/revierpod/base_river_pod.dart';
 import 'package:get/get.dart';
 import 'package:get/utils.dart';
+import 'package:hooks_riverpod/all.dart';
 
 import 'mainUtil.dart';
 
 void main() async {
-  runApp(new MyApp());
+  runApp(ProviderScope(
+    child: MyApp(),
+  ));
   // runZonedGuarded(() => runApp(new MyApp()), (Object error, StackTrace stack) {
   //   print('${error.toString()} stack:${stack.toString()}');
   // });
@@ -113,6 +117,7 @@ class MyApp extends StatelessWidget {
         BaseQRCodePage.routeName: (_) => BaseQRCodePage(),
         BaseInteractiveViewer.routeName: (_) => BaseInteractiveViewer(),
         GetListPageRoute.routeName: (_) => GetListPageRoute(),
+        BaseRiverPodRoute.routeName: (_) => BaseRiverPodRoute(),
       },
     );
   }
@@ -235,6 +240,7 @@ class MyHomeState extends State<MyHome> {
             _child('get demo', BaseGetPage.routeName),
             _child("扫描二维码", BaseQRCodePage.routeName),
             _child("放大缩小组件", BaseInteractiveViewer.routeName),
+            _child('新的状态管理思路 riverPod', BaseRiverPodRoute.routeName),
           ]),
           _title('自定义的动画组件',
               list: [_child('page controller', BaseCustomListAnimationPage.routeName)])
