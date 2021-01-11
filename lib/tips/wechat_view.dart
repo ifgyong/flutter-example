@@ -14,8 +14,7 @@ class WeChatSoundWidget extends StatefulWidget {
   _FYTabbarWidgetState createState() => _FYTabbarWidgetState();
 }
 
-class _FYTabbarWidgetState extends State<WeChatSoundWidget>
-    with SingleTickerProviderStateMixin {
+class _FYTabbarWidgetState extends State<WeChatSoundWidget> with SingleTickerProviderStateMixin {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -151,8 +150,7 @@ class SoundWidget extends StatefulWidget {
   _FYSoundWidgetState createState() => _FYSoundWidgetState();
 }
 
-class _FYSoundWidgetState extends State<SoundWidget>
-    with SingleTickerProviderStateMixin {
+class _FYSoundWidgetState extends State<SoundWidget> with SingleTickerProviderStateMixin {
   @override
   Widget build(BuildContext context) {
     return _body();
@@ -186,8 +184,7 @@ class _FYSoundWidgetState extends State<SoundWidget>
   AnimationController _animationController;
   @override
   void initState() {
-    _animationController =
-        AnimationController(vsync: this, duration: widget.duration)..repeat();
+    _animationController = AnimationController(vsync: this, duration: widget.duration)..repeat();
     super.initState();
   }
 
@@ -276,15 +273,8 @@ class _CustomSoundWidget extends CustomPainter {
       } else {
         _paint.style = PaintingStyle.stroke;
       }
-      canvas.drawArc(
-          Rect.fromCenter(
-              center: Offset(size.width, size.height / 2),
-              width: size.width * wh,
-              height: size.height * wh),
-          startAngle,
-          sweepAngle,
-          point,
-          _paint);
+      var rect = Rect.fromLTWH(0, 0, size.width * wh, size.height * wh);
+      canvas.drawArc(rect, startAngle, sweepAngle, point, _paint);
     }
   }
 
