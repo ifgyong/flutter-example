@@ -69,17 +69,18 @@ class _CustomPageViewState extends State<CustomPageView> {
               alignment: Alignment.center,
               child: PageView.builder(
                 controller: _pageController,
-                itemCount: widget.pageCount,
+                itemCount: widget?.pageCount,
                 onPageChanged: (index) {
                   _currentIndex = index;
-                  if (widget.onPageChanged != null) widget.onPageChanged(index);
+                  if (widget?.onPageChanged != null)
+                    widget?.onPageChanged(index);
                 },
                 itemBuilder: (ctx, index) {
                   return Opacity(
-                    opacity: widget.opacityVisibility == true
+                    opacity: widget?.opacityVisibility == true
                         ? (index == _nextIndex ? alpha : 1 - alpha)
                         : 1,
-                    child: widget.itemBuilder(ctx, index),
+                    child: widget?.itemBuilder(ctx, index),
                   );
                 },
               ),
@@ -101,14 +102,15 @@ class _CustomPageViewState extends State<CustomPageView> {
     super.initState();
 
     alpha = 0;
-    _pageController = PageController(initialPage: widget.initPage ?? 0);
+
+    _pageController = PageController(initialPage: widget?.initPage ?? 0);
     _currentIndex = widget.initPage ?? 0;
     _nextIndex = _currentIndex + 1;
-    _pageViewHeight = widget.widgetHeights[widget.initPage];
+    _pageViewHeight = widget?.widgetHeights[widget?.initPage];
 
-    _heightList = widget.widgetHeights;
-    if (widget.freshHeightCallBack != null) {
-      widget.freshHeightCallBack(_pageViewHeight);
+    _heightList = widget?.widgetHeights;
+    if (widget?.freshHeightCallBack != null) {
+      widget?.freshHeightCallBack(_pageViewHeight);
     }
     _pageController.addListener(() {
       var fr = () {
@@ -133,19 +135,19 @@ class _CustomPageViewState extends State<CustomPageView> {
         if (alpha < 0) alpha = 0;
         if (alpha > 1.0) alpha = 1.0;
         if (alpha == double.nan) alpha = 0;
-        if (widget.freshHeightCallBack != null) {
-          widget.freshHeightCallBack(_pageViewHeight);
+        if (widget?.freshHeightCallBack != null) {
+          widget?.freshHeightCallBack(_pageViewHeight);
         }
       };
-      if (widget.freshWidget != null) {
-        widget.freshWidget(fr);
+      if (widget?.freshWidget != null) {
+        widget?.freshWidget(fr);
       }
     });
   }
 
   @override
   void dispose() {
-    _pageController.dispose();
+    _pageController?.dispose();
     super.dispose();
   }
 }
