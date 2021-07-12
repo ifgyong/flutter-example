@@ -36,7 +36,7 @@ class _AnimationTextKitState extends State<AnimationTextKitPage> {
           _item(RotateAnimatedText('RotateAnimatedText')),
           _item(ScaleAnimatedText('ScaleAnimatedText')),
           TextLiquidFill(text: 'TextLiquidFill'),
-          _item(TyperAnimatedText('TyperAnimatedText',
+          _item(TyperAnimatedText('TyperAnimatedText ',
               speed: Duration(milliseconds: 400))),
         ],
       ),
