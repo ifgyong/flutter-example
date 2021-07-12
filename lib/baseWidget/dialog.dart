@@ -138,7 +138,7 @@ class BaseDialogState extends State<BaseDialog> {
   }
 
   void _showDialog() {
-    showDialog(context: context, child: bd());
+    showDialog(context: context, builder: (_) => bd());
   }
 
   void _showDatePicker() {

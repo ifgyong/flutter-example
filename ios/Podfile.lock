@@ -2,22 +2,20 @@ PODS:
   - audioplayer (0.0.1):
     - Flutter
   - Flutter (1.0.0)
-  - flutter_boost (0.0.2):
+  - flutter_boost (1.33.4):
     - Flutter
   - fluttertoast (0.0.2):
     - Flutter
-    - Toast
   - MTBBarcodeScanner (5.0.11)
   - path_provider (0.0.1):
     - Flutter
   - "permission_handler (5.0.1+1)":
     - Flutter
-  - qr_code_scanner (0.0.2):
+  - qr_code_scanner (0.2.0):
     - Flutter
     - MTBBarcodeScanner
   - record_mp3 (0.0.1):
     - Flutter
-  - Toast (4.0.0)
   - url_launcher (0.0.1):
     - Flutter
 
@@ -35,7 +33,6 @@ DEPENDENCIES:
 SPEC REPOS:
   trunk:
     - MTBBarcodeScanner
-    - Toast
 
 EXTERNAL SOURCES:
   audioplayer:
@@ -59,17 +56,16 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   audioplayer: 0584f31a697e4b0bbad405ae7903d7a93585e784
-  Flutter: 0e3d915762c693b495b44d77113d4970485de6ec
-  flutter_boost: a7cfa776b75329d5e7d101d0cd33e75042bcde69
-  fluttertoast: 6122fa75143e992b1d3470f61000f591a798cc58
+  Flutter: 434fef37c0980e73bb6479ef766c45957d4b510c
+  flutter_boost: a71bfe674f8db35b4fb5dc7136036fca47d2a9db
+  fluttertoast: b644586ef3b16f67fae9a1f8754cef6b2d6b634b
   MTBBarcodeScanner: f453b33c4b7dfe545d8c6484ed744d55671788cb
   path_provider: abfe2b5c733d04e238b0d8691db0cfd63a27a93c
   permission_handler: eac8e15b4a1a3fba55b761d19f3f4e6b005d15b6
-  qr_code_scanner: 16107718bdad7d708cdf6a5eacdca24b56cdf471
+  qr_code_scanner: bb67d64904c3b9658ada8c402e8b4d406d5d796e
   record_mp3: b842d3900f65a0707e4064d9bcfac6323dea0b4f
-  Toast: 91b396c56ee72a5790816f40d3a94dd357abc196
   url_launcher: 6fef411d543ceb26efce54b05a0a40bfd74cbbef
 
-PODFILE CHECKSUM: aafe91acc616949ddb318b77800a7f51bffa2a4c
+PODFILE CHECKSUM: ffd7293eb7d5907b54a367fd400872baeef513a5
 
-COCOAPODS: 1.10.0.rc.1
+COCOAPODS: 1.10.0

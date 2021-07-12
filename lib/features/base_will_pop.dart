@@ -22,26 +22,26 @@ class _BaseWillPopState extends State<BaseWillPop> {
             //code
             showDialog(
                 context: context,
-                child: CupertinoAlertDialog(
-                  title: Text('提示'),
-                  content: Text('真的退出吗？'),
-                  actions: <Widget>[
-                    FlatButton(
-                      child: Text('真的 退出了'),
-                      onPressed: () {
-                        Navigator.of(context).popUntil((route) {
-                          return route.isFirst;
-                        });
-                      },
-                    ),
-                    FlatButton(
-                      child: Text('暂不退出了'),
-                      onPressed: () {
-                        Navigator.maybePop(context);
-                      },
-                    ),
-                  ],
-                ));
+                builder: (ctx) => CupertinoAlertDialog(
+                      title: Text('提示'),
+                      content: Text('真的退出吗？'),
+                      actions: <Widget>[
+                        FlatButton(
+                          child: Text('真的 退出了'),
+                          onPressed: () {
+                            Navigator.of(context).popUntil((route) {
+                              return route.isFirst;
+                            });
+                          },
+                        ),
+                        FlatButton(
+                          child: Text('暂不退出了'),
+                          onPressed: () {
+                            Navigator.maybePop(context);
+                          },
+                        ),
+                      ],
+                    ));
             return false;
           }),
     );

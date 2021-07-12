@@ -36,7 +36,7 @@ class _BaseQRCodePageState extends State<BaseQRCodePage> {
     this.controller = controller;
     controller.scannedDataStream.listen((scanData) {
       setState(() {
-        qrText = scanData;
+        qrText = scanData.toString();
       });
     });
   }
