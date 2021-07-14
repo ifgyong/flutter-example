@@ -35,16 +35,24 @@ class _BaseSliderPageState extends State<BaseRotationBoxPage> {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                GestureDetector(
+                TextButton(
                   child: RotatedBox(
                     quarterTurns: value,
                     child: Container(
                       padding: EdgeInsets.all(20),
-                      child: Text('点我旋转'),
-                      color: Colors.blue,
+                      decoration: BoxDecoration(
+                          color: Colors.blue,
+                          borderRadius: BorderRadius.all(Radius.circular(10))),
+                      child: Text(
+                        '点我旋转',
+                        style: TextStyle(
+                            fontSize: 20,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.white),
+                      ),
                     ),
                   ),
-                  onTap: () {
+                  onPressed: () {
                     setState(() {
                       value += 1;
                       value %= 4;
