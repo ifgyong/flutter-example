@@ -60,7 +60,7 @@ class _BaseSliderPageState extends State<BaseRotationBoxPage> {
                     });
                   },
                 ),
-                Text('datadatadatadata'),
+                Text('点击左侧按钮 我会移动的'),
               ],
             )
           ],
