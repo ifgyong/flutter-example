@@ -1,6 +1,9 @@
 PODS:
   - audioplayer (0.0.1):
     - Flutter
+  - connectivity (0.0.1):
+    - Flutter
+    - Reachability
   - Flutter (1.0.0)
   - flutter_boost (1.33.4):
     - Flutter
@@ -14,6 +17,7 @@ PODS:
   - qr_code_scanner (0.2.0):
     - Flutter
     - MTBBarcodeScanner
+  - Reachability (3.2)
   - record_mp3 (0.0.1):
     - Flutter
   - url_launcher (0.0.1):
@@ -21,6 +25,7 @@ PODS:
 
 DEPENDENCIES:
   - audioplayer (from `.symlinks/plugins/audioplayer/ios`)
+  - connectivity (from `.symlinks/plugins/connectivity/ios`)
   - Flutter (from `Flutter`)
   - flutter_boost (from `.symlinks/plugins/flutter_boost/ios`)
   - fluttertoast (from `.symlinks/plugins/fluttertoast/ios`)
@@ -33,10 +38,13 @@ DEPENDENCIES:
 SPEC REPOS:
   trunk:
     - MTBBarcodeScanner
+    - Reachability
 
 EXTERNAL SOURCES:
   audioplayer:
     :path: ".symlinks/plugins/audioplayer/ios"
+  connectivity:
+    :path: ".symlinks/plugins/connectivity/ios"
   Flutter:
     :path: Flutter
   flutter_boost:
@@ -56,6 +64,7 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   audioplayer: 0584f31a697e4b0bbad405ae7903d7a93585e784
+  connectivity: c4130b2985d4ef6fd26f9702e886bd5260681467
   Flutter: 434fef37c0980e73bb6479ef766c45957d4b510c
   flutter_boost: a71bfe674f8db35b4fb5dc7136036fca47d2a9db
   fluttertoast: b644586ef3b16f67fae9a1f8754cef6b2d6b634b
@@ -63,6 +72,7 @@ SPEC CHECKSUMS:
   path_provider: abfe2b5c733d04e238b0d8691db0cfd63a27a93c
   permission_handler: eac8e15b4a1a3fba55b761d19f3f4e6b005d15b6
   qr_code_scanner: bb67d64904c3b9658ada8c402e8b4d406d5d796e
+  Reachability: 33e18b67625424e47b6cde6d202dce689ad7af96
   record_mp3: b842d3900f65a0707e4064d9bcfac6323dea0b4f
   url_launcher: 6fef411d543ceb26efce54b05a0a40bfd74cbbef
 

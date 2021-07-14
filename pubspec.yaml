@@ -55,6 +55,11 @@ dependencies:
   hive: ^1.4.4+1
   hive_flutter: ^0.3.1
   flutter_boost: ^1.17.1
+  connectivity: ^3.0.6
+  flutter_slidable: ^0.6.0
+  visibility_detector: ^0.1.5
+
+
 #    git:
 #      url: 'https://github.com/alibaba/flutter_boost.git'
 #      ref: '1.12.13+1'

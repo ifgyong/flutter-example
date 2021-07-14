@@ -2,8 +2,11 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertest01/baseWidget/animation_text_kit.dart';
 import 'package:fluttertest01/page_view/page_view.dart';
+import 'package:fluttertest01/tips/base_%20visibility_detector.dart';
+import 'package:fluttertest01/tips/base_connect.dart';
 import 'package:fluttertest01/tips/base_interactive_viewer.dart';
 import 'package:fluttertest01/tips/base_qrcode.dart';
+import 'package:fluttertest01/tips/base_slider.dart';
 import 'package:fluttertest01/tips/get/get_example.dart';
 import 'package:fluttertest01/tips/get/get_list_page.dart';
 import 'package:fluttertest01/tips/get/get_login_page.dart';
@@ -129,7 +132,10 @@ class MyApp extends StatelessWidget {
         GetListPageRoute.routeName: (_) => GetListPageRoute(),
         BaseRiverPodRoute.routeName: (_) => BaseRiverPodRoute(),
         CustomPageViewPage.routeName: (_) => CustomPageViewPage(),
-        AnimationTextKitPage.routeName: (_) => AnimationTextKitPage()
+        AnimationTextKitPage.routeName: (_) => AnimationTextKitPage(),
+        BaseNetWorkConnect.routeName: (_) => BaseNetWorkConnect(),
+        BaseSliderPage.routeName: (_) => BaseSliderPage(),
+        BaseVisibilityDetector.routeName: (_) => BaseVisibilityDetector(),
       },
     );
   }
@@ -264,6 +270,9 @@ class MyHomeState extends State<MyHome> {
             _child("扫描二维码", BaseQRCodePage.routeName),
             _child("放大缩小组件", BaseInteractiveViewer.routeName),
             _child('新的状态管理思路 riverPod', BaseRiverPodRoute.routeName),
+            _child('网络状态监控', BaseNetWorkConnect.routeName),
+            _child('cell滑动删除效果', BaseSliderPage.routeName),
+            _child('真实曝光', BaseVisibilityDetector.routeName),
           ]),
           _title('自定义的动画组件', list: [
             _child('page controller', BaseCustomListAnimationPage.routeName),

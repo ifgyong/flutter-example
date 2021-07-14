@@ -164,6 +164,34 @@
             </list>
           </value>
         </entry>
+        <entry key="connectivity">
+          <value>
+            <list>
+              <option value="$USER_HOME$/.fvm/versions/2.2.1-stable/.pub-cache/hosted/nest.hellobike.cn/connectivity-3.0.6/lib" />
+            </list>
+          </value>
+        </entry>
+        <entry key="connectivity_for_web">
+          <value>
+            <list>
+              <option value="$USER_HOME$/.fvm/versions/2.2.1-stable/.pub-cache/hosted/nest.hellobike.cn/connectivity_for_web-0.4.0/lib" />
+            </list>
+          </value>
+        </entry>
+        <entry key="connectivity_macos">
+          <value>
+            <list>
+              <option value="$USER_HOME$/.fvm/versions/2.2.1-stable/.pub-cache/hosted/nest.hellobike.cn/connectivity_macos-0.2.0/lib" />
+            </list>
+          </value>
+        </entry>
+        <entry key="connectivity_platform_interface">
+          <value>
+            <list>
+              <option value="$USER_HOME$/.fvm/versions/2.2.1-stable/.pub-cache/hosted/nest.hellobike.cn/connectivity_platform_interface-2.0.0/lib" />
+            </list>
+          </value>
+        </entry>
         <entry key="convert">
           <value>
             <list>
@@ -302,6 +330,13 @@
           <value>
             <list>
               <option value="$USER_HOME$/.fvm/versions/2.2.1-stable/.pub-cache/hosted/nest.hellobike.cn/flutter_simple_record_and_player-1.0.0+0.4/lib" />
+            </list>
+          </value>
+        </entry>
+        <entry key="flutter_slidable">
+          <value>
+            <list>
+              <option value="$USER_HOME$/.fvm/versions/2.2.1-stable/.pub-cache/hosted/nest.hellobike.cn/flutter_slidable-0.6.0/lib" />
             </list>
           </value>
         </entry>
@@ -808,6 +843,13 @@
             </list>
           </value>
         </entry>
+        <entry key="visibility_detector">
+          <value>
+            <list>
+              <option value="$USER_HOME$/.fvm/versions/2.2.1-stable/.pub-cache/hosted/nest.hellobike.cn/visibility_detector-0.1.5/lib" />
+            </list>
+          </value>
+        </entry>
         <entry key="watcher">
           <value>
             <list>
@@ -869,6 +911,10 @@
       <root url="file://$USER_HOME$/.fvm/versions/2.2.1-stable/.pub-cache/hosted/nest.hellobike.cn/clock-1.1.0/lib" />
       <root url="file://$USER_HOME$/.fvm/versions/2.2.1-stable/.pub-cache/hosted/nest.hellobike.cn/code_builder-3.7.0/lib" />
       <root url="file://$USER_HOME$/.fvm/versions/2.2.1-stable/.pub-cache/hosted/nest.hellobike.cn/collection-1.15.0/lib" />
+      <root url="file://$USER_HOME$/.fvm/versions/2.2.1-stable/.pub-cache/hosted/nest.hellobike.cn/connectivity-3.0.6/lib" />
+      <root url="file://$USER_HOME$/.fvm/versions/2.2.1-stable/.pub-cache/hosted/nest.hellobike.cn/connectivity_for_web-0.4.0/lib" />
+      <root url="file://$USER_HOME$/.fvm/versions/2.2.1-stable/.pub-cache/hosted/nest.hellobike.cn/connectivity_macos-0.2.0/lib" />
+      <root url="file://$USER_HOME$/.fvm/versions/2.2.1-stable/.pub-cache/hosted/nest.hellobike.cn/connectivity_platform_interface-2.0.0/lib" />
       <root url="file://$USER_HOME$/.fvm/versions/2.2.1-stable/.pub-cache/hosted/nest.hellobike.cn/convert-2.1.1/lib" />
       <root url="file://$USER_HOME$/.fvm/versions/2.2.1-stable/.pub-cache/hosted/nest.hellobike.cn/crypto-2.1.5/lib" />
       <root url="file://$USER_HOME$/.fvm/versions/2.2.1-stable/.pub-cache/hosted/nest.hellobike.cn/cupertino_icons-0.1.3/lib" />
@@ -887,6 +933,7 @@
       <root url="file://$USER_HOME$/.fvm/versions/2.2.1-stable/.pub-cache/hosted/nest.hellobike.cn/flutter_redux-0.7.0/lib" />
       <root url="file://$USER_HOME$/.fvm/versions/2.2.1-stable/.pub-cache/hosted/nest.hellobike.cn/flutter_riverpod-0.12.4/lib" />
       <root url="file://$USER_HOME$/.fvm/versions/2.2.1-stable/.pub-cache/hosted/nest.hellobike.cn/flutter_simple_record_and_player-1.0.0+0.4/lib" />
+      <root url="file://$USER_HOME$/.fvm/versions/2.2.1-stable/.pub-cache/hosted/nest.hellobike.cn/flutter_slidable-0.6.0/lib" />
       <root url="file://$USER_HOME$/.fvm/versions/2.2.1-stable/.pub-cache/hosted/nest.hellobike.cn/fluttertoast-3.1.3/lib" />
       <root url="file://$USER_HOME$/.fvm/versions/2.2.1-stable/.pub-cache/hosted/nest.hellobike.cn/freezed_annotation-0.12.0/lib" />
       <root url="file://$USER_HOME$/.fvm/versions/2.2.1-stable/.pub-cache/hosted/nest.hellobike.cn/get-3.26.0/lib" />
@@ -955,6 +1002,7 @@
       <root url="file://$USER_HOME$/.fvm/versions/2.2.1-stable/.pub-cache/hosted/nest.hellobike.cn/url_launcher_platform_interface-1.0.8/lib" />
       <root url="file://$USER_HOME$/.fvm/versions/2.2.1-stable/.pub-cache/hosted/nest.hellobike.cn/url_launcher_web-0.1.4+1/lib" />
       <root url="file://$USER_HOME$/.fvm/versions/2.2.1-stable/.pub-cache/hosted/nest.hellobike.cn/vector_math-2.1.0/lib" />
+      <root url="file://$USER_HOME$/.fvm/versions/2.2.1-stable/.pub-cache/hosted/nest.hellobike.cn/visibility_detector-0.1.5/lib" />
       <root url="file://$USER_HOME$/.fvm/versions/2.2.1-stable/.pub-cache/hosted/nest.hellobike.cn/watcher-1.0.0/lib" />
       <root url="file://$USER_HOME$/.fvm/versions/2.2.1-stable/.pub-cache/hosted/nest.hellobike.cn/web_socket_channel-1.2.0/lib" />
       <root url="file://$USER_HOME$/.fvm/versions/2.2.1-stable/.pub-cache/hosted/nest.hellobike.cn/win32-2.2.5/lib" />

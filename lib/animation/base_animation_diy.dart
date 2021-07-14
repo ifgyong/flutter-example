@@ -50,7 +50,7 @@ class _BaseDIYPageState extends State<BaseDIYPage> {
               height: 100,
             ),
           ),
-          OutlineButton(
+          TextButton(
             child: Text('更新key '),
             onPressed: () {
               setState(() {
@@ -61,6 +61,7 @@ class _BaseDIYPageState extends State<BaseDIYPage> {
           Row(
             children: <Widget>[
               AnimatedOpacity(
+                key: ValueKey('AnimatedOpacity'),
                 opacity: _ope,
                 duration: Duration(seconds: 3),
                 child: Container(
@@ -69,13 +70,13 @@ class _BaseDIYPageState extends State<BaseDIYPage> {
                   height: 100,
                 ),
               ),
-              OutlineButton(
+              TextButton(
                 child: Text('AnimatedOpacity'),
                 onPressed: () {
                   setState(() {
-//                    _opColor = _opColor == Colors.lightBlueAccent
-//                        ? Colors.orange
-//                        : Colors.lightBlueAccent;
+                    _opColor = _opColor == Colors.lightBlueAccent
+                        ? Colors.orange
+                        : Colors.lightBlueAccent;
                     _ope = _ope == 1 ? 0 : 1;
                   });
                 },
@@ -93,7 +94,7 @@ class _BaseDIYPageState extends State<BaseDIYPage> {
                   height: 100,
                 ),
               ),
-              OutlineButton(
+              TextButton(
                 child: Text('AnimatedPadding'),
                 onPressed: () {
                   setState(() {
@@ -121,7 +122,7 @@ class _BaseDIYPageState extends State<BaseDIYPage> {
                   ),
                 ),
               ),
-              OutlineButton(
+              TextButton(
                 child: Text('AnimatedAlign'),
                 onPressed: () {
                   setState(() {
@@ -139,7 +140,7 @@ class _BaseDIYPageState extends State<BaseDIYPage> {
   }
 
   Color _opColor = Colors.red;
-  double _ope = 0;
+  double _ope = 1;
   EdgeInsets _padding = EdgeInsets.only(left: 10, right: 10);
   Alignment _alignment = Alignment.center;
 }
@@ -251,7 +252,8 @@ class BaseAnimaitnAlign extends ImplicitlyAnimatedWidget {
   }
 }
 
-class BaseAnimaitnAlignState extends ImplicitlyAnimatedWidgetState<BaseAnimaitnAlign> {
+class BaseAnimaitnAlignState
+    extends ImplicitlyAnimatedWidgetState<BaseAnimaitnAlign> {
   EdgeInsetsGeometryTween _padding;
   @override
   void forEachTween(TweenVisitor<dynamic> visitor) {

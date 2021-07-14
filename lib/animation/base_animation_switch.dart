@@ -24,11 +24,18 @@ class _BaseAnimationSwitcherState extends State<BaseAnimationSwitcher> {
   }
 
   int _count = 0;
+  int _count2 = 0;
+
   Ax _ax = Ax.ttb;
   void _add() {
     setState(() {
-//      _ax = Ax.btt;
       _count += 1;
+    });
+  }
+
+  void _plus() {
+    setState(() {
+      _count2 += 1;
     });
   }
 
@@ -72,14 +79,43 @@ class _BaseAnimationSwitcherState extends State<BaseAnimationSwitcher> {
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
-              OutlineButton(
+              TextButton(
                 child: Text('+'),
                 onPressed: _add,
               ),
-              OutlineButton(child: Text('-'), onPressed: _down),
+              TextButton(child: Text('-'), onPressed: _down),
             ],
           ),
           _row(),
+          ClipRRect(
+            child: AnimatedSwitcher(
+              child: ClipRRect(
+                borderRadius: BorderRadius.all(Radius.circular(50)),
+                key: Key(_count2.toString()),
+                child: Container(
+                  width: 100,
+                  height: 100,
+                  color: Colors.accents[_count2 % Colors.accents.length],
+                  alignment: Alignment.center,
+                  child: Text(
+                    '$_count2',
+                    style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
+                  ),
+                ),
+              ),
+              duration: Duration(milliseconds: 1300),
+              transitionBuilder: (Widget child, Animation<double> animation) {
+                return FadeTransition(
+                  opacity: animation,
+                  child: child,
+                );
+              },
+            ),
+          ),
+          TextButton(
+            child: Text('一个widget过度\n成另外一个widget\n+数字'),
+            onPressed: _plus,
+          ),
         ],
       ),
     );
