@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertest01/baseWidget/animation_text_kit.dart';
+import 'package:fluttertest01/baseWidget/base_slider.dart';
 import 'package:fluttertest01/page_view/page_view.dart';
 import 'package:fluttertest01/tips/base_%20visibility_detector.dart';
 import 'package:fluttertest01/tips/base_connect.dart';
@@ -136,6 +137,7 @@ class MyApp extends StatelessWidget {
         BaseNetWorkConnect.routeName: (_) => BaseNetWorkConnect(),
         BaseSliderPage.routeName: (_) => BaseSliderPage(),
         BaseVisibilityDetector.routeName: (_) => BaseVisibilityDetector(),
+        BaseSliderRangPage.routeName: (_) => BaseSliderRangPage(),
       },
     );
   }
@@ -216,6 +218,7 @@ class MyHomeState extends State<MyHome> {
             _child('共享数据', '/sharedata'),
             _child('颜色和主题', '/colortheme'),
             _child('异步更新', '/futurestream'),
+            _child('选择组件', BaseSliderRangPage.routeName),
           ]),
           _title('时间处理和通知', subTile: '原始指针和时间、手势、全局总线、通知', list: [
             _child('原始指针处理', '/touchhandle'),
@@ -233,9 +236,9 @@ class MyHomeState extends State<MyHome> {
                 _child('切换动画', '/animationswitch'),
                 _child('过渡性动画', '/diyanimation'),
               ]),
-          _title(
-            '自定义组件',
-          ),
+          // _title(
+          //   '自定义组件',
+          // ),
           _title('文件操作与网络请求',
               subTile: 'Http HttpClient Dio Http分块下载、WebSocket、Json转Model',
               list: [
