@@ -1,6 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertest01/baseWidget/animation_text_kit.dart';
+import 'package:fluttertest01/baseWidget/base_page_view.dart';
+import 'package:fluttertest01/baseWidget/base_page_view_page.dart';
 import 'package:fluttertest01/baseWidget/base_rotation.dart';
 import 'package:fluttertest01/baseWidget/base_slider.dart';
 import 'package:fluttertest01/page_view/page_view.dart';
@@ -140,6 +142,7 @@ class MyApp extends StatelessWidget {
         BaseVisibilityDetector.routeName: (_) => BaseVisibilityDetector(),
         BaseSliderRangPage.routeName: (_) => BaseSliderRangPage(),
         BaseRotationBoxPage.routeName: (_) => BaseRotationBoxPage(),
+        BasePageViewPage.routeName: (_) => BasePageViewPage(),
       },
     );
   }
@@ -222,6 +225,7 @@ class MyHomeState extends State<MyHome> {
             _child('异步更新', '/futurestream'),
             _child('选择组件', BaseSliderRangPage.routeName),
             _child('旋转box', BaseRotationBoxPage.routeName),
+            _child('滑动渐变pageView', BasePageViewPage.routeName),
           ]),
           _title('时间处理和通知', subTile: '原始指针和时间、手势、全局总线、通知', list: [
             _child('原始指针处理', '/touchhandle'),
