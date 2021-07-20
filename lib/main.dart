@@ -5,6 +5,10 @@ import 'package:fluttertest01/baseWidget/base_page_view.dart';
 import 'package:fluttertest01/baseWidget/base_page_view_page.dart';
 import 'package:fluttertest01/baseWidget/base_rotation.dart';
 import 'package:fluttertest01/baseWidget/base_slider.dart';
+import 'package:fluttertest01/scrollview/swich_page.dart';
+import 'package:fluttertest01/video/base_download_file_page.dart';
+import 'package:fluttertest01/video/base_video_ijk_page.dart';
+import 'package:fluttertest01/video/base_video_page.dart';
 import 'package:fluttertest01/page_view/page_view.dart';
 import 'package:fluttertest01/tips/base_%20visibility_detector.dart';
 import 'package:fluttertest01/tips/base_connect.dart';
@@ -143,6 +147,11 @@ class MyApp extends StatelessWidget {
         BaseSliderRangPage.routeName: (_) => BaseSliderRangPage(),
         BaseRotationBoxPage.routeName: (_) => BaseRotationBoxPage(),
         BasePageViewPage.routeName: (_) => BasePageViewPage(),
+        BaseVideoPage.routeName: (_) => BaseVideoPage(),
+        BaseVideoPage2.routeName: (_) => BaseVideoPage2(),
+        BaseIJKVideoPage.routeName: (_) => BaseIJKVideoPage(),
+        BaseDownFilePage.routeName: (_) => BaseDownFilePage(),
+        BaseSwitchListTitlePage.routeName: (_) => BaseSwitchListTitlePage(),
       },
     );
   }
@@ -217,6 +226,7 @@ class MyHomeState extends State<MyHome> {
                 _child('customScrollview', '/cscrollview'),
                 _child('监听滚动', '/listenoffset'),
                 _child('车轮list', '/wheel'),
+                _child('SwitchList', BaseSwitchListTitlePage.routeName),
               ]),
           _title('功能能组件', subTile: '导航返回拦截、数据共享、跨组件状态共享、颜色和主题、异步更新UI', list: [
             _child('导航返回键拦截', '/willpop'),
@@ -288,7 +298,13 @@ class MyHomeState extends State<MyHome> {
             _child('page controller', BaseCustomListAnimationPage.routeName),
             _child('page view', CustomPageViewPage.routeName),
             _child('动画文本', AnimationTextKitPage.routeName),
-          ])
+          ]),
+          _title('视频，gif', list: [
+            _child('视频', BaseVideoPage.routeName),
+            _child('youTobBe视频', BaseVideoPage2.routeName),
+            _child('ijk', BaseIJKVideoPage.routeName),
+            _child('下载视频', BaseDownFilePage.routeName),
+          ]),
         ],
       ),
     );

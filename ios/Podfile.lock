@@ -7,9 +7,25 @@ PODS:
   - Flutter (1.0.0)
   - flutter_boost (1.33.4):
     - Flutter
+  - flutter_ijkplayer (0.0.1):
+    - Flutter
+    - FlutterIJK (~> 0.1.0)
+  - flutter_inappwebview (0.0.1):
+    - Flutter
+    - flutter_inappwebview/Core (= 0.0.1)
+    - OrderedSet (~> 5.0)
+  - flutter_inappwebview/Core (0.0.1):
+    - Flutter
+    - OrderedSet (~> 5.0)
+  - flutter_vlc_player (3.0.2):
+    - Flutter
+    - MobileVLCKit (~> 3.3.15)
+  - FlutterIJK (0.1.2)
   - fluttertoast (0.0.2):
     - Flutter
+  - MobileVLCKit (3.3.17)
   - MTBBarcodeScanner (5.0.11)
+  - OrderedSet (5.0.0)
   - path_provider (0.0.1):
     - Flutter
   - "permission_handler (5.0.1+1)":
@@ -22,22 +38,31 @@ PODS:
     - Flutter
   - url_launcher (0.0.1):
     - Flutter
+  - video_player (0.0.1):
+    - Flutter
 
 DEPENDENCIES:
   - audioplayer (from `.symlinks/plugins/audioplayer/ios`)
   - connectivity (from `.symlinks/plugins/connectivity/ios`)
   - Flutter (from `Flutter`)
   - flutter_boost (from `.symlinks/plugins/flutter_boost/ios`)
+  - flutter_ijkplayer (from `.symlinks/plugins/flutter_ijkplayer/ios`)
+  - flutter_inappwebview (from `.symlinks/plugins/flutter_inappwebview/ios`)
+  - flutter_vlc_player (from `.symlinks/plugins/flutter_vlc_player/ios`)
   - fluttertoast (from `.symlinks/plugins/fluttertoast/ios`)
   - path_provider (from `.symlinks/plugins/path_provider/ios`)
   - permission_handler (from `.symlinks/plugins/permission_handler/ios`)
   - qr_code_scanner (from `.symlinks/plugins/qr_code_scanner/ios`)
   - record_mp3 (from `.symlinks/plugins/record_mp3/ios`)
   - url_launcher (from `.symlinks/plugins/url_launcher/ios`)
+  - video_player (from `.symlinks/plugins/video_player/ios`)
 
 SPEC REPOS:
   trunk:
+    - FlutterIJK
+    - MobileVLCKit
     - MTBBarcodeScanner
+    - OrderedSet
     - Reachability
 
 EXTERNAL SOURCES:
@@ -49,6 +74,12 @@ EXTERNAL SOURCES:
     :path: Flutter
   flutter_boost:
     :path: ".symlinks/plugins/flutter_boost/ios"
+  flutter_ijkplayer:
+    :path: ".symlinks/plugins/flutter_ijkplayer/ios"
+  flutter_inappwebview:
+    :path: ".symlinks/plugins/flutter_inappwebview/ios"
+  flutter_vlc_player:
+    :path: ".symlinks/plugins/flutter_vlc_player/ios"
   fluttertoast:
     :path: ".symlinks/plugins/fluttertoast/ios"
   path_provider:
@@ -61,20 +92,29 @@ EXTERNAL SOURCES:
     :path: ".symlinks/plugins/record_mp3/ios"
   url_launcher:
     :path: ".symlinks/plugins/url_launcher/ios"
+  video_player:
+    :path: ".symlinks/plugins/video_player/ios"
 
 SPEC CHECKSUMS:
   audioplayer: 0584f31a697e4b0bbad405ae7903d7a93585e784
   connectivity: c4130b2985d4ef6fd26f9702e886bd5260681467
   Flutter: 434fef37c0980e73bb6479ef766c45957d4b510c
   flutter_boost: a71bfe674f8db35b4fb5dc7136036fca47d2a9db
+  flutter_ijkplayer: ef9006131553deb6d8ae6d7fbd3bcbf93b135930
+  flutter_inappwebview: bfd58618f49dc62f2676de690fc6dcda1d6c3721
+  flutter_vlc_player: bb2059d1a5833e695ec30a25864336baf065fd9f
+  FlutterIJK: 545556916ba2a89c8c7e1dd63acaeca6b8f3942f
   fluttertoast: b644586ef3b16f67fae9a1f8754cef6b2d6b634b
+  MobileVLCKit: c5dd1b0ae933dc9c2348099840e753496dcdd908
   MTBBarcodeScanner: f453b33c4b7dfe545d8c6484ed744d55671788cb
+  OrderedSet: aaeb196f7fef5a9edf55d89760da9176ad40b93c
   path_provider: abfe2b5c733d04e238b0d8691db0cfd63a27a93c
   permission_handler: eac8e15b4a1a3fba55b761d19f3f4e6b005d15b6
   qr_code_scanner: bb67d64904c3b9658ada8c402e8b4d406d5d796e
   Reachability: 33e18b67625424e47b6cde6d202dce689ad7af96
   record_mp3: b842d3900f65a0707e4064d9bcfac6323dea0b4f
   url_launcher: 6fef411d543ceb26efce54b05a0a40bfd74cbbef
+  video_player: 9cc823b1d9da7e8427ee591e8438bfbcde500e6e
 
 PODFILE CHECKSUM: ffd7293eb7d5907b54a367fd400872baeef513a5
 
