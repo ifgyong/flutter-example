@@ -17,7 +17,24 @@ class _BaseListViewState extends State<BaseListView> {
       appBar: AppBar(
         title: Text('ListView '),
       ),
-      body: _body4(),
+      body: NotificationListener(
+        child: NotificationListener<ScrollNotification>(
+          child: _body4(),
+          onNotification: (notification) {
+            if (notification is ScrollEndNotification) {
+              print('in:${notification.runtimeType} $notification');
+            } else if (notification is ScrollStartNotification) {
+              print('in:${notification.runtimeType} $notification');
+            }
+
+            return false;
+          },
+        ),
+        onNotification: (notification) {
+          // print('out:${notification.runtimeType} $notification');
+          return true;
+        },
+      ),
     );
   }
 

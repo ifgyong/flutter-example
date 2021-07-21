@@ -6,6 +6,7 @@ import 'package:fluttertest01/baseWidget/base_page_view_page.dart';
 import 'package:fluttertest01/baseWidget/base_rotation.dart';
 import 'package:fluttertest01/baseWidget/base_slider.dart';
 import 'package:fluttertest01/scrollview/swich_page.dart';
+import 'package:fluttertest01/u3d/u3d_page.dart';
 import 'package:fluttertest01/video/base_download_file_page.dart';
 import 'package:fluttertest01/video/base_video_ijk_page.dart';
 import 'package:fluttertest01/video/base_video_page.dart';
@@ -152,6 +153,7 @@ class MyApp extends StatelessWidget {
         BaseIJKVideoPage.routeName: (_) => BaseIJKVideoPage(),
         BaseDownFilePage.routeName: (_) => BaseDownFilePage(),
         BaseSwitchListTitlePage.routeName: (_) => BaseSwitchListTitlePage(),
+        BaseU3DPage.routeName: (_) => BaseU3DPage(),
       },
     );
   }
@@ -298,6 +300,7 @@ class MyHomeState extends State<MyHome> {
             _child('page controller', BaseCustomListAnimationPage.routeName),
             _child('page view', CustomPageViewPage.routeName),
             _child('动画文本', AnimationTextKitPage.routeName),
+            _child('3d', BaseU3DPage.routeName),
           ]),
           _title('视频，gif', list: [
             _child('视频', BaseVideoPage.routeName),

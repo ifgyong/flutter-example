@@ -36,8 +36,8 @@ dependencies:
   get: ^3.13.2
   get_storage: ^1.3.0
   fluttertoast: any
-  flutter_simple_record_and_player: ^1.0.0
-  json_annotation: ^3.0.0
+  flutter_simple_record_and_player: any
+
   flutter_bloc: ^6.0.5
   bloc: ^6.0.3
   flutter_redux: ^0.7.0
@@ -46,6 +46,8 @@ dependencies:
   flutter_hooks: ^0.14.0
   hooks_riverpod: ^0.12.1
   animated_text_kit: ^4.2.1
+#  arkit_plugin:
+#    git: git://github.com/olexale/arkit_flutter_plugin.git
 
 
   # The following adds the Cupertino Icons font to your application.
@@ -79,6 +81,7 @@ dev_dependencies:
   bloc: ^6.0.0
   equatable: ^1.2.3
   scoped_model: ^1.1.0
+  json_annotation: any
   fish_redux: ^0.3.4
 
 
