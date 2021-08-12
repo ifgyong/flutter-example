@@ -65,6 +65,9 @@ dependencies:
   youtube_player_flutter: any
   flutter_ijkplayer: any
   permission_handler: any
+  scoped_model: ^1.1.0
+  fish_redux: ^0.3.4
+  equatable: ^1.2.3
 
 
 
@@ -78,11 +81,13 @@ dev_dependencies:
     sdk: flutter
   build_runner: ^1.10.0
   json_serializable: ^3.2.0
-  bloc: ^6.0.0
-  equatable: ^1.2.3
-  scoped_model: ^1.1.0
   json_annotation: any
-  fish_redux: ^0.3.4
+#  flutter_ume: ^0.1.0
+#  flutter_ume_kit_ui: ^0.1.0
+#  flutter_ume_kit_device: ^0.1.0
+#  flutter_ume_kit_perf: ^0.1.0
+#  flutter_ume_kit_show_code: ^0.1.0
+#  flutter_ume_kit_console: ^0.1.0
 
 
 

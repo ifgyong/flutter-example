@@ -28,7 +28,7 @@ packages:
       name: args
       url: "https://nest.hellobike.cn"
     source: hosted
-    version: "2.1.1"
+    version: "2.2.0"
   async:
     dependency: transitive
     description:
@@ -233,7 +233,7 @@ packages:
     source: hosted
     version: "3.0.10"
   equatable:
-    dependency: "direct dev"
+    dependency: "direct main"
     description:
       name: equatable
       url: "https://nest.hellobike.cn"
@@ -261,7 +261,7 @@ packages:
     source: hosted
     version: "5.2.1"
   fish_redux:
-    dependency: "direct dev"
+    dependency: "direct main"
     description:
       name: fish_redux
       url: "https://nest.hellobike.cn"
@@ -673,7 +673,7 @@ packages:
       name: qr_code_scanner
       url: "https://nest.hellobike.cn"
     source: hosted
-    version: "0.5.1"
+    version: "0.5.2"
   qr_flutter:
     dependency: "direct main"
     description:
@@ -710,7 +710,7 @@ packages:
     source: hosted
     version: "0.24.1"
   scoped_model:
-    dependency: "direct dev"
+    dependency: "direct main"
     description:
       name: scoped_model
       url: "https://nest.hellobike.cn"
@@ -776,7 +776,7 @@ packages:
       name: stream_transform
       url: "https://nest.hellobike.cn"
     source: hosted
-    version: "1.2.0"
+    version: "2.0.0"
   string_scanner:
     dependency: transitive
     description:
@@ -860,7 +860,7 @@ packages:
       name: video_player
       url: "https://nest.hellobike.cn"
     source: hosted
-    version: "2.1.10"
+    version: "2.1.12"
   video_player_platform_interface:
     dependency: transitive
     description:
@@ -874,7 +874,7 @@ packages:
       name: video_player_web
       url: "https://nest.hellobike.cn"
     source: hosted
-    version: "2.0.1"
+    version: "2.0.2"
   visibility_detector:
     dependency: "direct main"
     description:
